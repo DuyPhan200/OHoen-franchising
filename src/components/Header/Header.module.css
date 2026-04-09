@@ -1,0 +1,124 @@
+/* Header Component - Blue background with centered logo */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #2563A8 0%, #1E4D7B 100%);
+  width: 100%;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Scroll shadow */
+.header.scrolled {
+  box-shadow: 0 4px 12px rgba(37, 99, 168, 0.3);
+}
+
+/* Left section: Hidden on franchise page */
+.headerLeft {
+  display: none;
+}
+
+/* Center section: Logo centered */
+.headerCenter {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Right section: Hidden on franchise page */
+.headerRight {
+  display: none;
+}
+
+/* CTA Buttons wrapper for responsive hiding */
+.ctaButtonsWrapper {
+  display: flex;
+}
+
+/* Wide Desktop Layout (>= 1920px) */
+@media (min-width: 1920px) {
+  .header {
+    padding: 1.25rem 3rem;
+  }
+
+  .headerRight {
+    gap: 1.5rem;
+  }
+}
+
+/* Desktop Layout (1024px - 1919px) */
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  .headerRight {
+    gap: 1rem;
+  }
+}
+
+/* Tablet Layout (768px - 1023px) - Requirements 8.1, 8.2, 8.3 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    padding: 0.875rem 1.5rem;
+  }
+
+  /* Hide NavigationMenu on tablet - Requirement 8.1 */
+  .headerCenter {
+    display: none;
+  }
+
+  /* Hide CTAButtons on tablet - Requirement 8.2 */
+  .ctaButtonsWrapper {
+    display: none;
+  }
+
+  .headerRight {
+    gap: 0.875rem;
+  }
+}
+
+/* Mobile Layout (< 768px) - Hide center navigation and CTA buttons */
+@media (max-width: 767px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Hide NavigationMenu on mobile - Requirement 8.1 */
+  .headerCenter {
+    display: none;
+  }
+
+  /* Hide CTAButtons on mobile - Requirement 8.2 */
+  .ctaButtonsWrapper {
+    display: none;
+  }
+
+  .headerRight {
+    gap: 0.75rem;
+  }
+}
+
+/* Small Mobile (320px - 767px) */
+@media (min-width: 320px) and (max-width: 767px) {
+  .header {
+    padding: 0.625rem 0.875rem;
+  }
+}
+
+/* Extra Small Mobile (< 320px) */
+@media (max-width: 319px) {
+  .header {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .headerRight {
+    gap: 0.5rem;
+  }
+}
