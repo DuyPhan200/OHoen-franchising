@@ -1,0 +1,21 @@
+/**
+ * FranchisePage styles
+ * Requirements: 11.2, 11.3, 11.4
+ * 
+ * Task 6.2: Style FranchisePage with CSS Modules
+ * - min-height: 100vh for full viewport coverage
+ * - Prevent layout shift between header and hero section
+ */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Prevent layout shift - header is sticky and in document flow */
+  /* No padding-top needed since header is not absolute positioned */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}

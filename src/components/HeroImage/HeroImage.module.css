@@ -1,0 +1,118 @@
+/* Hero Image Container - Requirement 4.1, 9.4 */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  /* Aspect ratio is set inline via style prop to prevent CLS */
+  /* Default aspect ratio: 16/9 for hero images */
+  /* Requirement 9.2: CSS containment for image container */
+  contain: layout style paint;
+}
+
+/* Requirement 4.1, 4.3: Full-width image with aspect ratio maintained */
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  max-width: 100%;
+  /* Smooth fade-in transition when image loads (Requirement 9.2) */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Loaded state - fade in the image (Requirement 9.2) */
+.heroImage.loaded {
+  opacity: 1;
+}
+
+/* Requirement 4.5, 9.2: Loading placeholder with blur-up technique */
+.placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Blur-up placeholder image (Requirement 9.2) */
+.blurPlaceholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Strong blur effect for low-quality placeholder */
+  filter: blur(20px);
+  opacity: 0.6;
+  /* Scale up slightly to hide blur edges */
+  transform: scale(1.1);
+}
+
+/* Requirement 4.5: Error state for failed image loads */
+.errorState {
+  width: 100%;
+  height: 100%;
+  background-color: #f8d7da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #721c24;
+  font-weight: 500;
+  padding: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Wide Desktop Layout (>= 1920px) - Requirement 7.4 */
+@media (min-width: 1920px) {
+  .heroImage {
+    object-position: center center;
+  }
+}
+
+/* Desktop Layout (1024px - 1919px) - Requirement 7.1 */
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .heroImage {
+    object-position: center center;
+  }
+}
+
+/* Tablet Layout (768px - 1023px) - Requirement 7.1 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroImage {
+    object-position: center center;
+  }
+}
+
+/* Mobile Layout (< 768px) - Requirement 7.2 */
+@media (max-width: 767px) {
+  .heroImage {
+    object-position: center center;
+  }
+
+  .errorState {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Small Mobile (320px - 767px) - Requirement 7.4 */
+@media (min-width: 320px) and (max-width: 767px) {
+  .errorState {
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra Small Mobile (< 320px) - Requirement 7.4 */
+@media (max-width: 319px) {
+  .errorState {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+}

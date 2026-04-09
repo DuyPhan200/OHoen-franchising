@@ -1,0 +1,60 @@
+/* Franchise Hero Section - Requirements 6.1, 6.5, 6.6 */
+
+/* Container with relative positioning for title overlay */
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Image wrapper with absolute positioning */
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Centered title overlay - Requirements 6.5, 6.6 */
+.heroTitle {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 800;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+/* Hide title if empty */
+.heroTitle:empty {
+  display: none;
+}
+
+/* Mobile and Tablet Responsive - Requirement 8.4, 8.5 */
+@media (max-width: 1023px) {
+  .heroSection {
+    min-height: 300px;
+  }
+
+  .heroTitle {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+}
+
+/* Desktop Responsive - Requirement 7.2, 7.3 */
+@media (min-width: 1024px) {
+  .heroSection {
+    min-height: max(500px, 60vh);
+  }
+}

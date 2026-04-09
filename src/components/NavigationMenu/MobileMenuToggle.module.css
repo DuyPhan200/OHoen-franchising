@@ -1,0 +1,85 @@
+/* Mobile Menu Toggle Button - Requirement 7.2 */
+.toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+/* Requirement 8.5: Visible focus indicator */
+.toggle:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Hamburger bar styling */
+.bar {
+  width: 2rem;
+  height: 0.25rem;
+  background-color: #333;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animate to X when open */
+.toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(0.5rem);
+}
+
+.toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-0.5rem);
+}
+
+/* Show hamburger menu on mobile - Requirement 7.2 */
+@media (max-width: 767px) {
+  .toggle {
+    display: flex;
+  }
+}
+
+/* Small Mobile (320px - 767px) - Requirement 7.4 */
+@media (min-width: 320px) and (max-width: 767px) {
+  .toggle {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+  .bar {
+    width: 1.875rem;
+    height: 0.225rem;
+  }
+}
+
+/* Extra Small Mobile (< 320px) - Requirement 7.4 */
+@media (max-width: 319px) {
+  .toggle {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .bar {
+    width: 1.75rem;
+    height: 0.2rem;
+  }
+
+  .toggle.open .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(0.45rem);
+  }
+
+  .toggle.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-0.45rem);
+  }
+}

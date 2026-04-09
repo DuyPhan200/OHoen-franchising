@@ -1,0 +1,127 @@
+/* CTA Buttons Container - Requirement 3.2 */
+.ctaContainer {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+  /* Requirement 9.2: CSS containment for CTA buttons */
+  contain: layout style;
+}
+
+/* CTA Button Base Styles - Requirements 3.1, 3.5, 3.6 */
+.ctaButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* Requirement 8.5: Visible focus indicators */
+.ctaButton:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 4px;
+}
+
+/* Requirement 3.1, 3.3: ORDER PICKUP button with sufficient contrast */
+.pickupButton {
+  background-color: #1e7e34;
+  color: white;
+}
+
+/* Requirement 3.6: Hover state with visual feedback */
+.pickupButton:hover {
+  background-color: #155724;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Requirement 3.1, 3.4: ORDER DELIVERY button with sufficient contrast */
+.deliveryButton {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Requirement 3.6: Hover state with visual feedback */
+.deliveryButton:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Wide Desktop Layout (>= 1920px) - Requirement 7.4 */
+@media (min-width: 1920px) {
+  .ctaContainer {
+    gap: 1.25rem;
+  }
+
+  .ctaButton {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop Layout (1024px - 1919px) - Requirement 7.1 */
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .ctaContainer {
+    gap: 1rem;
+  }
+
+  .ctaButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet Layout (768px - 1023px) - Requirement 7.1 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ctaContainer {
+    gap: 0.875rem;
+  }
+
+  .ctaButton {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile Layout (< 768px) - Requirements 7.2, 7.3 */
+@media (max-width: 767px) {
+  .ctaContainer {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  /* Requirement 7.3: Adjust CTA button sizes for mobile */
+  .ctaButton {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Small Mobile (320px - 767px) - Requirement 7.4 */
+@media (min-width: 320px) and (max-width: 767px) {
+  .ctaButton {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra Small Mobile (< 320px) - Requirement 7.4 */
+@media (max-width: 319px) {
+  .ctaContainer {
+    gap: 0.5rem;
+  }
+
+  .ctaButton {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}

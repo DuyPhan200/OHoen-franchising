@@ -1,0 +1,191 @@
+/* Navigation Menu Container - Requirement 2.2 */
+.nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+  /* Requirement 9.2: CSS containment for navigation menu */
+  contain: layout style;
+}
+
+/* Menu List - Requirement 2.1, 2.5 */
+.menuList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.menuItem {
+  margin: 0;
+}
+
+/* Menu Link - Requirements 2.1, 2.3, 2.4 */
+.menuLink {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  padding: 0.5rem;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Hover state with visual feedback - Requirement 2.4 */
+.menuLink:hover {
+  color: #007bff;
+  transform: translateY(-2px);
+}
+
+/* Focus state for keyboard navigation - Requirement 8.2 */
+.menuLink:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Active state - Requirement 3.6, 3.7 */
+.menuLink.active {
+  color: #DC2626;
+}
+
+/* Active state hover - Requirement 3.7 */
+.menuLink.active:hover {
+  color: #DC2626;
+}
+
+/* Active state */
+.menuLink:active {
+  color: #0056b3;
+  transform: translateY(0);
+}
+
+/* Wide Desktop Layout (>= 1920px) - Requirement 7.4 */
+@media (min-width: 1920px) {
+  .menuList {
+    gap: 2.5rem;
+  }
+
+  .menuLink {
+    font-size: 1rem;
+    padding: 0.625rem;
+  }
+}
+
+/* Desktop Layout (1024px - 1919px) - Requirement 7.1 */
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .menuList {
+    gap: 2rem;
+  }
+
+  .menuLink {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Tablet Layout (768px - 1023px) - Requirement 7.1 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .menuList {
+    gap: 1.5rem;
+  }
+
+  .menuLink {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.375rem;
+  }
+}
+
+/* Mobile Layout (< 768px) - Requirement 7.2 */
+@media (max-width: 767px) {
+  .nav {
+    position: relative;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .menuList {
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem 0;
+    min-width: 200px;
+    max-width: 90vw;
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+
+  /* Hidden state - Requirement 7.2 */
+  .menuClosed {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+
+  /* Open state - Requirement 7.2 */
+  .menuOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .menuItem {
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .menuItem:last-child {
+    border-bottom: none;
+  }
+
+  .menuLink {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    white-space: normal;
+  }
+
+  .menuLink:hover {
+    background-color: #f8f9fa;
+    transform: none;
+  }
+
+  .menuLink::after {
+    display: none;
+  }
+}
+
+/* Small Mobile (320px - 767px) - Requirement 7.4 */
+@media (min-width: 320px) and (max-width: 767px) {
+  .menuList {
+    min-width: 180px;
+  }
+
+  .menuLink {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Mobile (< 320px) - Requirement 7.4 */
+@media (max-width: 319px) {
+  .menuList {
+    min-width: 160px;
+    right: -0.5rem;
+  }
+
+  .menuLink {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+}
