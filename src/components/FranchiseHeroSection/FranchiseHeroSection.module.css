@@ -4,7 +4,7 @@
 .heroSection {
   position: relative;
   width: 100%;
-  min-height: 500px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +44,7 @@
 /* Mobile and Tablet Responsive - Requirement 8.4, 8.5 */
 @media (max-width: 1023px) {
   .heroSection {
-    min-height: 300px;
+    height: 100vh;
   }
 
   .heroTitle {
@@ -55,6 +55,6 @@
 /* Desktop Responsive - Requirement 7.2, 7.3 */
 @media (min-width: 1024px) {
   .heroSection {
-    min-height: max(500px, 60vh);
+    height: 100vh;
   }
 }
