@@ -13,7 +13,7 @@ interface QuizSectionProps {
  */
 const QuizSection: React.FC<QuizSectionProps> = ({ 
   onTakeQuiz,
-  quizImageSrc = '3 .jpg',
+  quizImageSrc = '3.jpg',
   quizImageAlt = 'Franchise opportunity'
 }) => {
   const handleQuizClick = () => {
