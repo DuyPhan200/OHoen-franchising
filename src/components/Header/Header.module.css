@@ -1,124 +1,85 @@
-/* Header Component - Blue background with centered logo */
-.header {
+.nav {
   position: sticky;
   top: 0;
   z-index: 100;
+  background: var(--bluedark);
+  height: 60px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #2563A8 0%, #1E4D7B 100%);
+}
+
+.navWrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--px);
   width: 100%;
-  box-sizing: border-box;
-  transition: box-shadow 0.3s ease;
-}
-
-/* Scroll shadow */
-.header.scrolled {
-  box-shadow: 0 4px 12px rgba(37, 99, 168, 0.3);
-}
-
-/* Left section: Hidden on franchise page */
-.headerLeft {
-  display: none;
-}
-
-/* Center section: Logo centered */
-.headerCenter {
-  flex: 0 0 auto;
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 16px;
 }
 
-/* Right section: Hidden on franchise page */
-.headerRight {
-  display: none;
+.navLogo {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  margin-right: auto;
+  white-space: nowrap;
+  line-height: 1.2;
 }
 
-/* CTA Buttons wrapper for responsive hiding */
-.ctaButtonsWrapper {
+.navLogoSmall {
+  display: block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 2px;
+}
+
+.navPhone {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
   display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s;
 }
 
-/* Wide Desktop Layout (>= 1920px) */
-@media (min-width: 1920px) {
-  .header {
-    padding: 1.25rem 3rem;
-  }
-
-  .headerRight {
-    gap: 1.5rem;
-  }
+.navPhone:hover {
+  color: var(--gold);
 }
 
-/* Desktop Layout (1024px - 1919px) */
-@media (min-width: 1024px) and (max-width: 1919px) {
-  .header {
-    padding: 1rem 2rem;
-  }
-
-  .headerRight {
-    gap: 1rem;
-  }
+.navPhoneIcon {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
 }
 
-/* Tablet Layout (768px - 1023px) - Requirements 8.1, 8.2, 8.3 */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .header {
-    padding: 0.875rem 1.5rem;
-  }
+.navCta {
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
 
-  /* Hide NavigationMenu on tablet - Requirement 8.1 */
-  .headerCenter {
+.navCta:hover {
+  opacity: 0.88;
+}
+
+@media(max-width: 767px) {
+  .navPhone {
     display: none;
   }
-
-  /* Hide CTAButtons on tablet - Requirement 8.2 */
-  .ctaButtonsWrapper {
-    display: none;
-  }
-
-  .headerRight {
-    gap: 0.875rem;
-  }
-}
-
-/* Mobile Layout (< 768px) - Hide center navigation and CTA buttons */
-@media (max-width: 767px) {
-  .header {
-    padding: 0.75rem 1rem;
-  }
-
-  /* Hide NavigationMenu on mobile - Requirement 8.1 */
-  .headerCenter {
-    display: none;
-  }
-
-  /* Hide CTAButtons on mobile - Requirement 8.2 */
-  .ctaButtonsWrapper {
-    display: none;
-  }
-
-  .headerRight {
-    gap: 0.75rem;
-  }
-}
-
-/* Small Mobile (320px - 767px) */
-@media (min-width: 320px) and (max-width: 767px) {
-  .header {
-    padding: 0.625rem 0.875rem;
-  }
-}
-
-/* Extra Small Mobile (< 320px) */
-@media (max-width: 319px) {
-  .header {
-    padding: 0.5rem 0.75rem;
-  }
-
-  .headerRight {
-    gap: 0.5rem;
+  .navWrap {
+    padding: 0 20px;
   }
 }

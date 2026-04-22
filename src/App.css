@@ -1,3 +1,6 @@
+/* Import CSS Variables */
+@import './styles/variables.module.css';
+
 /* Global Reset */
 * {
   margin: 0;

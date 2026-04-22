@@ -1,0 +1,259 @@
+.fran {
+  background: var(--white);
+  padding: 88px 0;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.franLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+  margin-top: 44px;
+}
+
+/* Image left */
+.franImgWrap {
+  position: relative;
+}
+
+.franImgMain {
+  height: 480px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.franImgMain img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.franImgSm {
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  width: 180px;
+  height: 140px;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 4px solid var(--white);
+  box-shadow: 0 12px 32px rgba(20, 94, 153, 0.15);
+  z-index: 2;
+}
+
+.franImgSm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.franBadge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: var(--bluedark);
+  color: var(--white);
+  border-radius: var(--r-md);
+  padding: 16px 20px;
+  box-shadow: 0 12px 24px rgba(13, 74, 122, 0.3);
+  z-index: 3;
+}
+
+.franBadge strong {
+  display: block;
+  font-family: 'EB Garamond', serif;
+  font-size: 28px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.franBadge span {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Profile + FAQ */
+.profileBox {
+  background: var(--sand);
+  border-radius: var(--r-md);
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.profileBoxLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.profileList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pi {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.piDot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-top: 6px;
+}
+
+.pi p {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.pi strong {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.faqLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faqItem {
+  border: 1px solid rgba(20, 94, 153, 0.1);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  background: var(--white);
+}
+
+.faqBtn {
+  width: 100%;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.faqBtn:hover {
+  background: rgba(20, 94, 153, 0.03);
+}
+
+.faqIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(20, 94, 153, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faqIcon svg {
+  width: 12px;
+  height: 12px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.open .faqIcon {
+  background: var(--blue);
+  transform: rotate(45deg);
+}
+
+.open .faqIcon svg {
+  stroke: var(--white);
+}
+
+.faqBody {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.open .faqBody {
+  max-height: 200px;
+}
+
+.faqContent {
+  padding: 0 24px 20px;
+}
+
+.faqContent p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.faqContent a {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.faqContent a:hover {
+  text-decoration: underline;
+}
+
+@media(max-width: 900px) {
+  .franLayout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .franImgMain {
+    height: 380px;
+  }
+  .franImgSm {
+    width: 140px;
+    height: 110px;
+    bottom: -16px;
+    right: 0;
+  }
+}
+
+@media(max-width: 767px) {
+  .fran {
+    padding: 60px 0;
+  }
+  .profileBox {
+    padding: 24px;
+  }
+}

@@ -7,18 +7,8 @@ import './App.css';
  * Requirements: 11.6
  */
 function FranchiseRoute() {
-  const navigate = useNavigate();
-
-  const handleNavigate = (path: string) => {
-    navigate(path);
-  };
-
   return (
-    <FranchisePage
-      heroImageSrc="/herosection.png"
-      heroImageAlt="Vietnamese cuisine including bánh mì, phở, and chả giò"
-      onNavigate={handleNavigate}
-    />
+    <FranchisePage />
   );
 }
 

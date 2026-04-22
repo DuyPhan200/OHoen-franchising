@@ -1,0 +1,516 @@
+/* ==========================================================================
+   Reusable Style Patterns (Mixins)
+   ========================================================================== */
+
+/* ==========================================================================
+   CARD STYLES
+   ========================================================================== */
+
+/* Base card with subtle shadow */
+.card {
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Elevated card with stronger shadow */
+.cardElevated {
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: var(--spacing-xl);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardElevated:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Gradient card with brand colors */
+.cardGradient {
+  background: linear-gradient(135deg, var(--color-primary-blue) 0%, var(--color-primary-blue-dark) 100%);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+  color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(37, 99, 168, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardGradient:hover {
+  box-shadow: 0 12px 24px rgba(37, 99, 168, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Bordered card */
+.cardBordered {
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-light);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  transition: all 0.3s ease;
+}
+
+.cardBordered:hover {
+  border-color: var(--color-primary-blue);
+  box-shadow: 0 2px 8px rgba(37, 99, 168, 0.1);
+}
+
+/* ==========================================================================
+   BUTTON STYLES
+   ========================================================================== */
+
+/* Base button */
+.button {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-sizing: border-box;
+  text-align: center;
+  display: inline-block;
+}
+
+.button:focus {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 4px;
+}
+
+/* Primary button */
+.buttonPrimary {
+  background-color: var(--color-primary-blue);
+  color: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.buttonPrimary:hover {
+  background-color: var(--color-primary-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buttonPrimary:focus {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 4px;
+}
+
+/* Secondary button */
+.buttonSecondary {
+  background-color: var(--color-white);
+  color: var(--color-primary-blue);
+  border: 2px solid var(--color-primary-blue);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.buttonSecondary:hover {
+  background-color: var(--color-primary-blue);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buttonSecondary:focus {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 4px;
+}
+
+/* Accent button */
+.buttonAccent {
+  background-color: var(--color-accent-yellow);
+  color: var(--color-dark-blue-gray);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.buttonAccent:hover {
+  background-color: #e5b200;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buttonAccent:focus {
+  outline: 2px solid var(--color-accent-yellow);
+  outline-offset: 4px;
+}
+
+/* Large button */
+.buttonLarge {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+/* Small button */
+.buttonSmall {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+/* Full width button */
+.buttonFullWidth {
+  width: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   CONTAINER / SECTION STYLES
+   ========================================================================== */
+
+/* Standard container with max-width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Wide container */
+.containerWide {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Narrow container */
+.containerNarrow {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Section with vertical padding */
+.section {
+  padding: var(--spacing-2xl) 0;
+  width: 100%;
+}
+
+/* Section with background */
+.sectionGray {
+  background-color: var(--color-gray-light);
+  padding: var(--spacing-2xl) 0;
+  width: 100%;
+}
+
+/* Section with grid background pattern */
+.sectionGridPattern {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+    linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+  background-size: 30px 30px;
+  padding: var(--spacing-2xl) 0;
+  width: 100%;
+}
+
+/* ==========================================================================
+   GRID LAYOUTS
+   ========================================================================== */
+
+/* 2-column grid */
+.grid2Col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+/* 3-column grid */
+.grid3Col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+/* 4-column grid */
+.grid4Col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+
+/* Auto-fit grid (responsive) */
+.gridAutoFit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Auto-fill grid (responsive) */
+.gridAutoFill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* ==========================================================================
+   RESPONSIVE UTILITIES
+   ========================================================================== */
+
+/* Hide on mobile */
+.hideMobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hideMobile {
+    display: block;
+  }
+}
+
+/* Hide on tablet and up */
+.hideTabletUp {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hideTabletUp {
+    display: none;
+  }
+}
+
+/* Hide on desktop */
+.hideDesktop {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .hideDesktop {
+    display: none;
+  }
+}
+
+/* Show only on mobile */
+.showMobileOnly {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .showMobileOnly {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   VISUAL EFFECTS
+   ========================================================================== */
+
+/* Subtle shadow */
+.shadowSm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Medium shadow */
+.shadowMd {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Large shadow */
+.shadowLg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Extra large shadow */
+.shadowXl {
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Colored shadow (brand blue) */
+.shadowBlue {
+  box-shadow: 0 4px 12px rgba(37, 99, 168, 0.15);
+}
+
+/* Rounded corners */
+.roundedSm {
+  border-radius: 4px;
+}
+
+.roundedMd {
+  border-radius: 8px;
+}
+
+.roundedLg {
+  border-radius: 12px;
+}
+
+.roundedXl {
+  border-radius: 16px;
+}
+
+.roundedFull {
+  border-radius: 9999px;
+}
+
+/* Border utilities */
+.border {
+  border: 1px solid var(--color-gray-light);
+}
+
+.borderPrimary {
+  border: 2px solid var(--color-primary-blue);
+}
+
+.borderAccent {
+  border: 2px solid var(--color-accent-yellow);
+}
+
+/* Text shadow for readability */
+.textShadow {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7),
+               0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Smooth transitions */
+.transition {
+  transition: all 0.3s ease;
+}
+
+.transitionFast {
+  transition: all 0.15s ease;
+}
+
+.transitionSlow {
+  transition: all 0.5s ease;
+}
+
+/* Hover lift effect */
+.hoverLift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hoverLift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   RESPONSIVE GRID BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .grid2Col,
+  .grid3Col,
+  .grid4Col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: Full columns */
+@media (min-width: 1024px) {
+  .grid2Col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid3Col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid4Col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile: Single column for all grids */
+@media (max-width: 767px) {
+  .grid2Col,
+  .grid3Col,
+  .grid4Col,
+  .gridAutoFit,
+  .gridAutoFill {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .container,
+  .containerWide,
+  .containerNarrow {
+    padding: 0 1rem;
+  }
+
+  .section,
+  .sectionGray,
+  .sectionGridPattern {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .buttonFullWidth {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY UTILITIES
+   ========================================================================== */
+
+/* Focus visible styles */
+.focusVisible:focus-visible {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 2px;
+}
+
+/* Screen reader only */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to content link */
+.skipLink {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary-blue);
+  color: var(--color-white);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skipLink:focus {
+  top: 0;
+}
