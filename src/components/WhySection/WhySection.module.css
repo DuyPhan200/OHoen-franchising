@@ -258,6 +258,10 @@
     font-size: 14px;
     line-height: 1.5;
   }
+  .supList {
+    gap: 16px;
+    margin-top: 24px;
+  }
   .supItem {
     padding: 16px;
     gap: 12px;
