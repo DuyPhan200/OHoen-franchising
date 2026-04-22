@@ -1,0 +1,120 @@
+/* ────────────────────────────────────────────
+   TOKENS FROM CNOH_Franchise_v4
+──────────────────────────────────────────── */
+:root {
+  --blue:    #145E99;
+  --bluedark:#0D4A7A;
+  --gold:    #FDC500;
+  --mist:    #CAE9FF;
+  --mint:    #BEE9E8;
+  --sand:    #F5F0E8;
+  --ink:     #1B2E34;
+  --muted:   #5A6F78;
+  --white:   #fff;
+
+  --h1: clamp(2rem, 5vw, 3.5rem);
+  --h2: clamp(1.5rem, 3vw, 2.25rem);
+  --h3: 1.125rem;
+  --body: 1rem;
+  --small: .875rem;
+
+  --max: 1100px;
+  --px: 32px;
+  --section-y: 88px;
+  --r: 12px;
+  --r-lg: 20px;
+  --r-pill: 100px;
+}
+
+@media(max-width:767px) {
+  :root { --section-y:60px; --px:20px; }
+}
+
+/* ────────────────────────────────────────────
+   RESET
+──────────────────────────────────────────── */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Montserrat', sans-serif;
+  font-size:var(--body); color:var(--ink);
+  background:var(--white); overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img { display:block; width:100%; object-fit:cover; }
+a { text-decoration:none; color:inherit; }
+button { font-family:inherit; cursor:pointer; border:none; background:none; }
+
+/* ────────────────────────────────────────────
+   LAYOUT HELPERS
+──────────────────────────────────────────── */
+.wrap { max-width:var(--max); margin:0 auto; padding:0 var(--px); }
+.section { padding:var(--section-y) 0; }
+.section-alt { background:var(--mist); }
+.section-dark { background:var(--blue); }
+.section-sand { background:var(--sand); }
+
+h2.sh {
+  font-size:var(--h2); font-weight:700;
+  line-height:1.25; margin-bottom:12px;
+}
+.eyebrow {
+  font-size:10px; font-weight:700;
+  letter-spacing:2px; text-transform:uppercase;
+  color:var(--blue); display:flex; align-items:center;
+  gap:10px; margin-bottom:12px;
+}
+.eyebrow::before {
+  content:''; width:24px; height:1.5px;
+  background:var(--blue); flex-shrink:0;
+}
+.eyebrow.light { color:rgba(255,255,255,.55); }
+.eyebrow.light::before { background:rgba(255,255,255,.35); }
+.lead { font-size:15px; color:var(--muted); line-height:1.8; }
+
+/* ────────────────────────────────────────────
+   ANIMATIONS
+──────────────────────────────────────────── */
+.fade { opacity:0; transition:opacity .55s ease; }
+.fade.in { opacity:1; }
+
+.ripple {
+  position:absolute; border-radius:50%;
+  background:rgba(255,255,255,.4);
+  transform:scale(0); animation:ripple-animation .5s linear;
+  pointer-events:none;
+}
+@keyframes ripple-animation { to { transform:scale(4); opacity:0; } }
+
+/* ────────────────────────────────────────────
+   BUTTONS
+──────────────────────────────────────────── */
+.btn-gold {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--gold); color:var(--ink);
+  font-size:14px; font-weight:700;
+  padding:15px 32px; border-radius:var(--r-pill);
+  transition:opacity .15s, transform .15s;
+  position:relative; overflow:hidden;
+}
+.btn-gold:hover { opacity:.9; transform:scale(1.02); }
+
+.btn-outline-white {
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; color:var(--white);
+  font-size:14px; font-weight:700;
+  padding:14px 32px; border-radius:var(--r-pill);
+  border:2px solid rgba(255,255,255,.5);
+  transition:border-color .15s, background .15s;
+}
+.btn-outline-white:hover { border-color:var(--white); background:rgba(255,255,255,.08); }
+
+.btn-phone {
+  display:inline-flex; align-items:center; gap:8px;
+  color:var(--blue); font-size:14px; font-weight:700;
+  padding:14px 28px; border-radius:var(--r-pill);
+  border:2px solid var(--blue);
+  transition:background .15s, color .15s;
+}
+.btn-phone:hover { background:var(--blue); color:var(--white); }
+.btn-phone svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; }

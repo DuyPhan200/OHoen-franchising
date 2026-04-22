@@ -1,22 +1,31 @@
 /**
- * Central export file for all Hero Section components
+ * Central export file for all components
  */
-export { default as HeroSection } from './HeroSection';
-export { default as Logo } from './Logo';
-export { default as NavigationMenu } from './NavigationMenu';
-export { default as CTAButtons } from './CTAButtons';
-export { default as HeroImage } from './HeroImage';
-export { default as BackgroundPattern } from './BackgroundPattern';
-export { default as Notification } from './Notification';
-export { NotificationProvider, useNotification } from './Notification/NotificationProvider';
-export { default as StatsSection } from './StatsSection';
-export { default as MetricsSection } from './MetricsSection';
-export { default as QuizSection } from './QuizSection';
-export { default as SoulSection } from './SoulSection';
-export { default as InvestmentPackageSection } from './InvestmentPackageSection';
-export { default as FranchiseTimeline } from './FranchiseTimeline';
-export { default as FranchiseForm } from './FranchiseForm';
-export { default as Footer } from './Footer';
-export { default as FranchisePage } from './FranchisePage';
+
+// Basic UI Components
 export { default as Header } from './Header';
+export { default as Footer } from './Footer';
+
+// Page Sections (New Landing Page)
+export { default as HeroSection } from './HeroSection';
+export { default as MetricsSection } from './MetricsSection';
+export { default as SoulSection } from './SoulSection';
+export { default as WhySection } from './WhySection';
+export { default as InvestmentPackageSection } from './InvestmentPackageSection';
+export { default as FranchiseVision } from './FranchiseVision';
+export { default as TestimonialsSection } from './TestimonialsSection';
+export { default as FAQSection } from './FAQSection';
+export { default as FranchiseForm } from './FranchiseForm';
+
+// Utility & Specialized Components
+export { default as NavigationMenu } from './NavigationMenu';
+export { default as StickyBar } from './NavigationMenu/StickyBar';
+export { NotificationProvider, useNotification } from './Notification/NotificationProvider';
+
+// Pages
+export { default as FranchisePage } from './FranchisePage';
+
+// Obsolete/Legacy Sections (Kept for compatibility if needed, but not used in FranchisePage)
+export { default as StatsSection } from './StatsSection';
+export { default as QuizSection } from './QuizSection';
 export { default as FranchiseHeroSection } from './FranchiseHeroSection';

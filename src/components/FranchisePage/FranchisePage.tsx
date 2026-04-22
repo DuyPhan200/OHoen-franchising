@@ -1,47 +1,83 @@
-import React from 'react';
-import { FranchisePageProps } from '../../types';
-import Header from '../Header';
-import FranchiseHeroSection from '../FranchiseHeroSection';
-import MetricsSection from '../MetricsSection';
-import QuizSection from '../QuizSection';
-import SoulSection from '../SoulSection';
-import InvestmentPackageSection from '../InvestmentPackageSection';
-import FranchiseTimeline from '../FranchiseTimeline';
-import FranchiseForm from '../FranchiseForm';
-import Footer from '../Footer';
+import React, { useEffect, useState } from 'react';
+import { 
+  Header, 
+  HeroSection, 
+  SoulSection, 
+  WhySection, 
+  InvestmentPackageSection, 
+  FranchiseVision, 
+  TestimonialsSection, 
+  FAQSection, 
+  FranchiseForm, 
+  Footer, 
+  StickyBar 
+} from '..';
 import styles from './FranchisePage.module.css';
 
-/**
- * Franchise Page component with Header, FranchiseHeroSection, and QuizSection
- * Requirements: 11.3, 11.4
- */
-const FranchisePage: React.FC<FranchisePageProps> = ({
-  heroImageSrc,
-  heroImageAlt,
-  onNavigate
-}) => {
-  const handleTakeQuiz = () => {
-    // Handle quiz navigation or modal
-    console.log('Take quiz clicked');
-    // You can add navigation logic here if needed
-    // onNavigate?.('/quiz');
-  };
+const FranchisePage: React.FC = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      setScrollProgress(Math.min(pct, 100));
+    };
+
+    const handleRipple = (e: globalThis.MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const btn = target.closest('.btn-gold');
+      if (!btn) return;
+
+      const r = document.createElement('span');
+      r.className = 'ripple';
+      const rect = btn.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+      
+      r.style.width = `${size}px`;
+      r.style.height = `${size}px`;
+      r.style.left = `${x}px`;
+      r.style.top = `${y}px`;
+      
+      btn.appendChild(r);
+      setTimeout(() => r.remove(), 500);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('click', handleRipple);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('click', handleRipple);
+    };
+  }, []);
 
   return (
     <div className={styles.page}>
-      <Header onNavigate={onNavigate} activePath="/franchise" />
-      <FranchiseHeroSection
-        imageSrc={heroImageSrc}
-        imageAlt={heroImageAlt}
-        title=""
+      {/* Progress Bar */}
+      <div 
+        className={styles.progressBar} 
+        style={{ width: `${scrollProgress}%` }}
       />
-      <MetricsSection />
-      <QuizSection onTakeQuiz={handleTakeQuiz} />
-      <SoulSection />
-      <InvestmentPackageSection />
-      <FranchiseTimeline />
-      <FranchiseForm />
+
+      <Header />
+      
+      <main id="main-content">
+        <HeroSection />
+        <SoulSection />
+        <TestimonialsSection />
+        <InvestmentPackageSection />
+        <WhySection />
+        <FAQSection />
+        <FranchiseVision />
+        <FranchiseForm />
+      </main>
+
       <Footer />
+      <StickyBar />
     </div>
   );
 };

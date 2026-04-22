@@ -1,152 +1,43 @@
-/* Footer Styles */
-
 .footer {
-  background-color: #1B2E34;
-  padding: 3rem 0 1rem;
-  color: white;
+  background: var(--bluedark);
+  padding: 40px var(--px);
 }
 
-.container {
-  max-width: 1200px;
+.footerIn {
+  max-width: var(--max);
   margin: 0 auto;
-  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-/* Logo Section */
-.logoSection {
-  display: flex;
-  align-items: center;
-}
-
-.logoCircle {
-  width: 5rem;
-  height: 5rem;
-  background-color: #FDC500;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.logoIcon {
-  width: 2.5rem;
-  height: 2.5rem;
-  color: #1B2E34;
-}
-
-/* Social Section */
-.socialSection {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-end;
-}
-
-.socialTitle {
-  font-weight: 900;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
-  margin: 0;
-  color: white;
-}
-
-.socialIcons {
-  display: flex;
-  gap: 1rem;
-}
-
-.socialIcon {
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.socialIcon:hover {
-  background-color: #FDC500;
-  color: #1B2E34;
-  transform: translateY(-2px);
-}
-
-.socialIcon svg {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-/* Copyright */
-.copyright {
-  max-width: 1200px;
-  margin: 2rem auto 1rem;
-  padding: 0 2rem;
-  text-align: center;
-}
-
-.copyright p {
-  font-size: 0.75rem;
+.fBrand {
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
+  color: var(--white);
+  margin-bottom: 4px;
 }
 
-/* Disclaimer */
-.disclaimer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem 1rem;
+.fTagline {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
 }
 
-.disclaimer p {
-  font-size: 0.5rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.6);
-  margin: 0;
-  text-align: center;
+.fInfo {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.9;
+  text-align: right;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+@media(max-width: 767px) {
+  .fInfo {
+    text-align: left;
+  }
   .footer {
-    padding: 2rem 0 1rem;
-  }
-
-  .container {
-    flex-direction: column;
-    padding: 0 1rem;
-    gap: 1.5rem;
-  }
-
-  .logoSection {
-    justify-content: center;
-  }
-
-  .socialSection {
-    align-items: center;
-  }
-
-  .logoCircle {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  .logoIcon {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .copyright,
-  .disclaimer {
-    padding: 0 1rem;
+    padding: 32px 20px;
   }
 }

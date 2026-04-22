@@ -1,0 +1,160 @@
+.vision {
+  background: var(--mist);
+  padding: 100px 0;
+}
+
+.visionTop {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 88px;
+  align-items: flex-start;
+  margin-bottom: 64px;
+}
+
+.visionText {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+.bodyText {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.pull {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--ink);
+  border-left: 2px solid var(--gold);
+  padding-left: 28px;
+  margin: 0;
+}
+
+/* Roadmap Grid */
+.roadGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.roadCard {
+  background: var(--sand);
+  border-radius: 2px;
+  padding: 28px 24px;
+  border-top: 3px solid var(--blue);
+  transition: transform 0.3s ease;
+}
+
+.roadYear {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #5580a6; /* Muted blue from screenshot */
+  margin-bottom: 12px;
+}
+
+.roadNum {
+  font-family: 'EB Garamond', serif;
+  font-size: 64px; /* Significantly larger as in screenshot */
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.roadDesc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Scarcity Bar (CTA) */
+.scarcityBar {
+  background: #0d4a7a; /* Deeper brand blue */
+  border-radius: 4px;
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.scarcityBar p {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.scarcityBar p em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.scarcityBar a {
+  flex-shrink: 0;
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 16px 36px;
+  border-radius: 4px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.scarcityBar a:hover {
+  background: #fbc000;
+  transform: translateY(-2px);
+}
+
+@media(max-width: 1024px) {
+  .visionTop {
+    gap: 48px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 900px) {
+  .visionTop {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .scarcityBar {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+}
+
+@media(max-width: 480px) {
+  .roadGrid {
+    grid-template-columns: 1fr;
+  }
+  .roadNum {
+    font-size: 56px;
+  }
+}
