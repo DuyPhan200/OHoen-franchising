@@ -149,5 +149,11 @@
 @media(max-width: 767px) {
   .modelsGrid {
     grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 24px;
+  }
+  .modelCard {
+    max-width: 480px;
+    width: 100%;
   }
 }

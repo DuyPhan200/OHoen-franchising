@@ -19,22 +19,24 @@
 }
 
 .navLogo {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 16px;
   margin-right: auto;
-  white-space: nowrap;
-  line-height: 1.2;
 }
 
-.navLogoSmall {
+.logo1 {
+  height: 32px;
+  width: auto;
   display: block;
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
-  margin-top: 2px;
+  opacity: 1; /* Ensure full color visibility */
+}
+
+.logo2 {
+  height: 20px;
+  width: auto;
+  display: block;
+  opacity: 1; /* Remove transparency */
 }
 
 .navPhone {
@@ -84,11 +86,13 @@
     gap: 12px;
   }
   .navLogo {
-    font-size: 13px;
+    gap: 12px;
   }
-  .navLogoSmall {
-    font-size: 8px;
-    letter-spacing: 1px;
+  .logo1 {
+    height: 24px;
+  }
+  .logo2 {
+    height: 14px;
   }
   .navPhone {
     padding: 8px;
