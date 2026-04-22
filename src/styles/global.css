@@ -12,8 +12,8 @@
   --muted:   #5A6F78;
   --white:   #fff;
 
-  --h1: clamp(2rem, 5vw, 3.5rem);
-  --h2: clamp(1.5rem, 3vw, 2.25rem);
+  --h1: clamp(2.25rem, 8vw, 3.5rem);
+  --h2: clamp(1.75rem, 5vw, 2.25rem);
   --h3: 1.125rem;
   --body: 1rem;
   --small: .875rem;
@@ -27,7 +27,12 @@
 }
 
 @media(max-width:767px) {
-  :root { --section-y:60px; --px:20px; }
+  :root { 
+    --section-y: 56px; 
+    --px: 20px;
+    --h1: clamp(1.85rem, 10vw, 2.5rem);
+    --h2: clamp(1.5rem, 7vw, 1.85rem);
+  }
 }
 
 /* ────────────────────────────────────────────

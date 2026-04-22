@@ -253,7 +253,24 @@
   .fran {
     padding: 60px 0;
   }
+  .franLayout {
+    gap: 32px;
+  }
+  .franImgMain {
+    height: 280px;
+  }
+  .franImgSm {
+    display: none; /* Hide small image to save space on mobile */
+  }
   .profileBox {
     padding: 24px;
+    margin-bottom: 24px;
+  }
+  .pi p {
+    font-size: 13px;
+  }
+  .faqBtn {
+    padding: 16px 20px;
+    font-size: 13px;
   }
 }

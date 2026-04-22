@@ -23,7 +23,7 @@ const StickyBar: React.FC = () => {
   }, []);
 
   return (
-    <div className={styles.stickyBar} style={{ display: isVisible ? 'flex' : 'none' }}>
+    <div className={`${styles.stickyBar} ${isVisible ? styles.visible : ''}`}>
       <a href="#cta" className={styles.sbBtnGold}>Tư vấn miễn phí →</a>
       <a href="tel:0967564441" className={styles.sbBtnPhone}>
         <svg viewBox="0 0 24 24" className={styles.icon}>
