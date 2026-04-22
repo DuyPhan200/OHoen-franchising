@@ -76,10 +76,30 @@
 }
 
 @media(max-width: 767px) {
-  .navPhone {
-    display: none;
+  .nav {
+    height: 56px;
   }
   .navWrap {
-    padding: 0 20px;
+    padding: 0 16px;
+    gap: 12px;
+  }
+  .navLogo {
+    font-size: 13px;
+  }
+  .navLogoSmall {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .navPhone {
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+  }
+  .navPhone span {
+    display: none; /* Hide text, keep icon */
+  }
+  .navCta {
+    padding: 7px 14px;
+    font-size: 11px;
   }
 }

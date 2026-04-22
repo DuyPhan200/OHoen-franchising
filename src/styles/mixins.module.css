@@ -462,7 +462,7 @@
   .container,
   .containerWide,
   .containerNarrow {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
   }
 
   .section,

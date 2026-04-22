@@ -153,8 +153,26 @@
   }
   .uspRow {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
   .soulSection {
-    padding: 72px 0;
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .storyText h2 {
+    font-size: 1.6rem;
+  }
+  .storyText .body {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .pull {
+    font-size: 17px;
+    padding-left: 16px;
+  }
+  .uspCard {
+    padding: 20px 18px;
   }
 }

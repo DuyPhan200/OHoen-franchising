@@ -105,6 +105,13 @@
   appearance: none;
 }
 
+@media(max-width: 767px) {
+  .fg input, .fg select {
+    font-size: 16px; /* Prevents auto-zoom on iOS */
+    padding: 12px 14px;
+  }
+}
+
 .fg input:focus, .fg select:focus {
   border-color: var(--blue);
   background: var(--white);
@@ -230,6 +237,29 @@
 
 @media(max-width: 767px) {
   .formSec {
-    padding: 60px 0 80px;
+    padding: 56px 0 80px;
+  }
+  .formLeft h2 {
+    font-size: 1.75rem;
+    margin-bottom: 12px;
+  }
+  .trustList {
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .trustIco {
+    width: 32px;
+    height: 32px;
+  }
+  .trustTxt {
+    font-size: 13px;
+  }
+  .formBox {
+    padding: 28px 20px;
+    border-radius: var(--r-md);
+  }
+  .fSubmit {
+    font-size: 14px;
+    padding: 14px;
   }
 }

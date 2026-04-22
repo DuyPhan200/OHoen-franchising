@@ -226,6 +226,12 @@
   animation-delay: 0.6s;
 }
 
+@media(max-width: 1023px) {
+  .heroDecor, .heroDecor2 {
+    display: none;
+  }
+}
+
 @keyframes entranceLeft {
   from {
     opacity: 0;
@@ -278,18 +284,24 @@
 }
 
 @media(max-width: 767px) {
+  .heroSection {
+    padding-top: 40px;
+  }
   .heroActions {
+    flex-direction: column;
     width: 100%;
   }
-  .heroActions :global(.btn-gold),
-  .heroActions :global(.btn-outline-white) {
+  .heroActions a {
     width: 100%;
     justify-content: center;
+  }
+  .heroMicro {
+    text-align: center;
   }
   .statsWrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px 0;
+    gap: 32px 16px;
     padding: 0 20px;
   }
   .stat {
@@ -299,6 +311,9 @@
     display: none;
   }
   .statNum {
-    font-size: 28px;
+    font-size: 24px;
+  }
+  .statLabel {
+    font-size: 10px;
   }
 }

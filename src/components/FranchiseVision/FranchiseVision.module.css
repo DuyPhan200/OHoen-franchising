@@ -150,11 +150,38 @@
   }
 }
 
-@media(max-width: 480px) {
+@media(max-width: 767px) {
+  .vision {
+    padding: 64px 0;
+  }
+  .title {
+    font-size: 28px; /* Override clamp for better control */
+    margin-bottom: 16px;
+  }
+  .bodyText {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .pull {
+    font-size: 18px;
+    padding-left: 20px;
+  }
   .roadGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 16px;
+  }
+  .roadCard {
+    padding: 24px 20px;
   }
   .roadNum {
-    font-size: 56px;
+    font-size: 48px;
+  }
+  .scarcityBar p {
+    font-size: 14px;
+  }
+  .scarcityBar a {
+    width: 100%;
+    padding: 14px;
+    font-size: 13px;
   }
 }

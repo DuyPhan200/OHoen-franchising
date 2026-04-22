@@ -247,12 +247,35 @@
   }
 }
 
+@media (max-width: 767px) {
+  .support {
+    padding: 64px 0;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .desc {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .supItem {
+    padding: 16px;
+    gap: 12px;
+  }
+  .supItem h3 {
+    font-size: 16px;
+  }
+  .supItem p {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 600px) {
   .mosaicBottom {
     grid-template-columns: 1fr;
   }
   .supItem {
-    flex-direction: column;
-    gap: 16px;
+    flex-direction: row; /* Keep horizontal on small phones but slightly compact */
+    gap: 12px;
   }
 }
