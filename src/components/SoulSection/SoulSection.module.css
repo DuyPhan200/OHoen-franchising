@@ -8,42 +8,30 @@
   grid-template-columns: 0.9fr 1.1fr;
   gap: 64px;
   align-items: start;
-  margin-bottom: 72px;
 }
 
 /* Stacked images (Ảnh xếp chồng) */
 .storyImgs {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
   position: relative;
   max-width: 440px; /* Constrain width */
   margin: 0 auto;
 }
 
 .storyImgMain {
-  border-radius: 2px;
+  border-radius: 24px;
   overflow: hidden;
-  aspect-ratio: 1 / 1;
 }
 
 .storyImgMain img {
-  height: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Ảnh nhỏ chèn góc dưới bên phải */
-.storyImgInset {
-  position: absolute;
-  bottom: -24px;
-  right: -24px;
-  width: 42%;
-  aspect-ratio: 4 / 3;
-  border-radius: 2px;
-  overflow: hidden;
-  border: 5px solid var(--sand);
-  box-shadow: 0 16px 48px rgba(20, 94, 153, 0.12);
-}
 
-.storyImgInset img {
-  height: 100%;
-}
 
 /* Typography of the content section */
 .storyText .label {
@@ -83,61 +71,6 @@
   margin: 0;
 }
 
-/* 3 USP cards */
-.uspRow {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 44px;
-}
-
-.uspCard {
-  background: var(--white);
-  border-radius: var(--r);
-  padding: 24px 22px;
-  border-top: 3px solid var(--blue);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
-}
-
-.uspCard:hover {
-  transform: translateY(-4px);
-}
-
-.uspIcon {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  background: rgba(20, 94, 153, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-}
-
-.uspIcon svg {
-  width: 20px;
-  height: 20px;
-  stroke: var(--blue);
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.uspCard h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 6px;
-}
-
-.uspCard p {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.6;
-}
 
 /* Responsive on small screens */
 @media (max-width: 900px) {
@@ -145,16 +78,7 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .storyImgMain {
-    aspect-ratio: 4 / 3;
-  }
-  .storyImgInset {
-    display: none;
-  }
-  .uspRow {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+
   .soulSection {
     padding: 64px 0;
   }
@@ -171,8 +95,5 @@
   .pull {
     font-size: 17px;
     padding-left: 16px;
-  }
-  .uspCard {
-    padding: 20px 18px;
   }
 }

@@ -9,7 +9,7 @@ const InvestmentPackageSection: React.FC = () => {
   const fadeInCtaRef = useFadeIn();
 
   return (
-    <section id="models" className="section section-alt">
+    <section id="models" className={`section ${styles.investmentSection}`}>
       <div className="wrap">
         <div ref={fadeInTitleRef} className="fade">
           <div className="eyebrow">Hai mô hình đầu tư</div>

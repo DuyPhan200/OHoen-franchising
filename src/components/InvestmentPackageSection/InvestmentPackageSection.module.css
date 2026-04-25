@@ -1,3 +1,8 @@
+.investmentSection {
+  background: url('/herosection3.png') no-repeat center center;
+  background-size: cover;
+}
+
 .modelsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;

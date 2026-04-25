@@ -1,5 +1,6 @@
 .proof {
-  background: var(--white);
+  background: url('/herosection2.png') no-repeat center center;
+  background-size: cover;
   padding: 88px 0;
 }
 
@@ -15,7 +16,8 @@
 }
 
 .pstat {
-  background: var(--sand);
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border-radius: var(--r-lg);
   padding: 40px 32px;
   position: relative;
@@ -66,7 +68,8 @@
 }
 
 .rev {
-  background: var(--sand);
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border-radius: var(--r);
   padding: 28px 24px;
   display: flex;
