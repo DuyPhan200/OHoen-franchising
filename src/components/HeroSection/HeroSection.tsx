@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './HeroSection.module.css';
-import { useCounter, useFadeIn } from '../../hooks';
+import { useCounter } from '../../hooks';
 
-const StatItem: React.FC<{ target: number; suffix?: string; decimals?: number; label: string }> = ({ 
-  target, suffix = '', decimals = 0, label 
+const StatItem: React.FC<{ target: number; suffix?: string; decimals?: number; label: string }> = ({
+  target, suffix = '', decimals = 0, label
 }) => {
   const { ref, count } = useCounter({ target, suffix, decimals });
   return (
@@ -15,7 +15,7 @@ const StatItem: React.FC<{ target: number; suffix?: string; decimals?: number; l
 };
 
 const HeroSection: React.FC = () => {
-  const fadeInVisualRef = useFadeIn();
+
 
   return (
     <section id="hero" className={styles.heroSection}>
@@ -26,37 +26,32 @@ const HeroSection: React.FC = () => {
         <div>
           <div className={styles.heroKicker}>
             <div className={styles.kickerDot}></div>
-            <span className={styles.kickerText}>Chương trình nhượng quyền 2025–2028</span>
+            <span className={styles.kickerText}>Thông tin nhượng quyền</span>
           </div>
           <h1 className={styles.heroTitle}>
-            Sở hữu thương hiệu F&B<br />
-            truyền thống —<br />
-            <em>vốn từ 150 triệu</em>
+            Hành trình lan<br />
+            tỏa tinh thần<br />
+            <em>TỬ TẾ - TẬN TÂM</em>
           </h1>
           <p className={styles.heroDesc}>
-            Chuỗi cháo hải sản Nam Ô với hệ thống vận hành đã chuẩn hoá.
-            Mở nhượng quyền tại Đà Nẵng · HCM · Hà Nội · Hội An.
+            Cháo Hải Sản Nam Ô kết hợp hương vị truyền thống nguyên bản với hệ thống quản lý đã được chuẩn hóa. Điểm tựa vững chắc để bạn bắt đầu kinh doanh an toàn và không phải đi lên từ con số 0.
           </p>
           <div className={styles.heroActions}>
-            <a href="#cta" className="btn-gold">Đăng ký tư vấn miễn phí →</a>
+            <a href="#cta" className="btn-gold">Đăng ký tư vấn →</a>
             <a href="#models" className={styles.btnOutlineBlue}>Xem mô hình</a>
           </div>
-          <p className={styles.heroMicro}>Miễn phí · Không ràng buộc · Phản hồi trong 24h</p>
         </div>
 
         {/* IMAGE — right column */}
-        <div ref={fadeInVisualRef} className={`fade ${styles.heroVisual}`}>
+        <div className={styles.heroVisual}>
           <div className={styles.heroImgFrame}>
             <img
-              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80"
-              alt="Không gian Cháo Nghêu O Hoèn"
+              src="/herosection.png"
+              alt="Nhượng quyền Cháo Nghêu O Hoèn"
               loading="eager"
             />
           </div>
-          <div className={styles.heroBadge}>
-            <div className={styles.heroBadgeNum}>2023</div>
-            <div className={styles.heroBadgeLabel}>Khai trương · Đà Nẵng</div>
-          </div>
+
         </div>
       </div>
 
