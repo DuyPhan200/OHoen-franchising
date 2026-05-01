@@ -59,10 +59,10 @@
 .menuGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  width: 80%;
-  max-width: 950px;
-  margin-right: 2%;
+  gap: 12px;
+  width: 75%;
+  max-width: 800px;
+  margin-right: 5%;
 }
 
 @media (max-width: 991px) {
@@ -80,12 +80,22 @@
   .leftContent {
     position: static;
     width: 100%;
+    min-width: 0;
     margin-bottom: 40px;
     align-items: center;
     text-align: center;
   }
   .brandBadge {
     align-items: center;
+  }
+  .mainTitle {
+    font-size: 32px;
+  }
+  .goldText {
+    white-space: normal;
+  }
+  .textDivider {
+    justify-content: center;
   }
 }
 
@@ -144,7 +154,7 @@
 
 .mainTitle {
   font-family: var(--font-heading, "EB Garamond", serif);
-  font-size: 56px;
+  font-size: 48px;
   line-height: 1.1;
   margin-bottom: 12px;
   font-weight: 800;
@@ -184,7 +194,7 @@
 }
 
 .leftDesc {
-  font-size: 14px;
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.8;
   margin-bottom: 32px;
@@ -217,7 +227,7 @@
   background: #f8ece1;
   border-radius: 16px;
   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15);
-  padding: 8px 4px 16px;
+  padding: 8px 4px 12px;
   text-align: center;
   position: relative;
   transition: transform 0.2s ease;
@@ -252,10 +262,10 @@
 }
 
 .imageWrapper {
-  width: 80%;
+  width: 70%;
   aspect-ratio: 1 / 1;
   height: auto;
-  margin: 0 auto 8px;
+  margin: 0 auto 6px;
   border-radius: 50%;
   overflow: hidden;
 }
