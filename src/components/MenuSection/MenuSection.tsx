@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './MenuSection.module.css';
 
 interface MenuItem {
@@ -50,6 +50,30 @@ const menuItems: MenuItem[] = [
 ];
 
 const MenuSection: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { 
+        threshold: 0.4, // Chỉ chạy khi 40% lưới món ăn xuất hiện
+        rootMargin: '0px 0px -50px 0px' // Đẩy điểm kích hoạt xuống thêm 50px
+      }
+    );
+
+    if (gridRef.current) {
+      observer.observe(gridRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className={styles.section} id="menu">
       <img src="/4.png" alt="Sea Background" className={styles.bgImage} />
@@ -67,7 +91,7 @@ const MenuSection: React.FC = () => {
           <div className={styles.textDivider}>
             <div className={styles.line}></div>
             <svg viewBox="0 0 24 24" className={styles.midShell}>
-              <path d="M12 2C7.58172 2 4 5.58172 4 10C4 14.4183 8 18 12 22C16 18 20 14.4183 20 10C20 5.58172 16.4183 2 12 2Z" />
+              <path d="M10.8,21.5C9.3,21,2,14.6,2,10.5C2,5.8,6.5,2,12,2s10,3.8,10,8.5c0,4.1-7.3,10.5-8.8,11.5L12,22L10.8,21.5z M12,19c1.5-1.1,8-7.5,8-8.5c0-3.6-3.6-6.5-8-6.5S4,6.9,4,10.5c0,1,6.5,7.4,8,8.5V19z M11,7h2v9h-2V7z M7.5,8.5h1.5v6H7.5V8.5z M15,8.5h1.5v6H15V8.5z" />
             </svg>
             <div className={styles.line}></div>
           </div>
@@ -77,9 +101,13 @@ const MenuSection: React.FC = () => {
           </p>
           <button className={styles.ctaButton}>XEM THÊM</button>
         </div>
-        <div className={styles.menuGrid}>
-          {menuItems.map((item) => (
-            <div key={item.id} className={styles.menuCard}>
+        <div className={styles.menuGrid} ref={gridRef}>
+          {menuItems.map((item, index) => (
+            <div 
+              key={item.id} 
+              className={`${styles.menuCard} ${isVisible ? styles.animate : ''}`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               {item.isSpecial && (
                 <div className={styles.badge}>
                   <img src="/Logo1.svg" alt="Logo" className={styles.badgeLogo} />
@@ -92,7 +120,7 @@ const MenuSection: React.FC = () => {
               <h3 className={styles.title}>{item.name}</h3>
               <div className={styles.divider}>
                 <svg viewBox="0 0 24 24" className={styles.shellIcon}>
-                  <path d="M12 2C7.58172 2 4 5.58172 4 10C4 14.4183 8 18 12 22C16 18 20 14.4183 20 10C20 5.58172 16.4183 2 12 2Z" />
+                  <path d="M10.8,21.5C9.3,21,2,14.6,2,10.5C2,5.8,6.5,2,12,2s10,3.8,10,8.5c0,4.1-7.3,10.5-8.8,11.5L12,22L10.8,21.5z M12,19c1.5-1.1,8-7.5,8-8.5c0-3.6-3.6-6.5-8-6.5S4,6.9,4,10.5c0,1,6.5,7.4,8,8.5V19z M11,7h2v9h-2V7z M7.5,8.5h1.5v6H7.5V8.5z M15,8.5h1.5v6H15V8.5z" />
                 </svg>
               </div>
               <p className={styles.desc}>{item.desc}</p>

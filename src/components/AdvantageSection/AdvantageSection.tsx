@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './AdvantageSection.module.css';
+
+interface Point {
+  text: string;
+  iconType: string;
+}
 
 interface AdvantageItem {
   id: string;
   num: string;
   title: string;
   subtitle: string;
-  icon: string;
-  points: string[];
+  topIcon: string;
+  points: Point[];
 }
 
 const advantages: AdvantageItem[] = [
@@ -16,12 +21,12 @@ const advantages: AdvantageItem[] = [
     num: '01',
     title: 'LỢI THẾ',
     subtitle: 'SẢN PHẨM',
-    icon: 'bowl',
+    topIcon: 'bowl',
     points: [
-      'Sản phẩm dinh dưỡng, hương vị thơm ngon, nguồn gốc rõ ràng.',
-      'Đáp ứng đa dạng tệp khách hàng, phục vụ mọi khung giờ.',
-      'Tiết kiệm thời gian tối ưu hoá quy trình, chế biến nhanh chóng, thời gian chờ đợi ngắn.',
-      'Đóng gói tiện lợi thuận tiện cho vận chuyển và sử dụng.'
+      { text: 'Sản phẩm dinh dưỡng, hương vị thơm ngon, nguồn gốc rõ ràng.', iconType: 'leaves' },
+      { text: 'Đáp ứng đa dạng tệp khách hàng, phục vụ mọi khung giờ.', iconType: 'users' },
+      { text: 'Tiết kiệm thời gian tối ưu hoá quy trình, chế biến nhanh chóng, thời gian chờ đợi ngắn.', iconType: 'clock' },
+      { text: 'Đóng gói tiện lợi thuận tiện cho vận chuyển và sử dụng.', iconType: 'package' }
     ]
   },
   {
@@ -29,12 +34,12 @@ const advantages: AdvantageItem[] = [
     num: '02',
     title: 'LỢI THẾ',
     subtitle: 'VẬN HÀNH',
-    icon: 'cog',
+    topIcon: 'cog',
     points: [
-      'Mô hình tinh gọn hiện đại, không cần quá nhiều nhân sự.',
-      'Được thiết kế chuyên nghiệp, đảm bảo vận hành trơn tru hiệu quả.',
-      'Nhận diện thương hiệu đồng bộ, nổi bật, chuyên nghiệp.',
-      'Đáng tin cậy với khách hàng và đối tác.'
+      { text: 'Mô hình tinh gọn hiện đại, không cần quá nhiều nhân sự.', iconType: 'users-cog' },
+      { text: 'Được thiết kế chuyên nghiệp, đảm bảo vận hành trơn tru hiệu quả.', iconType: 'layout' },
+      { text: 'Nhận diện thương hiệu đồng bộ, nổi bật, chuyên nghiệp.', iconType: 'badge' },
+      { text: 'Đáng tin cậy với khách hàng và đối tác.', iconType: 'handshake' }
     ]
   },
   {
@@ -42,17 +47,124 @@ const advantages: AdvantageItem[] = [
     num: '03',
     title: 'LỢI THẾ',
     subtitle: 'MARKETING',
-    icon: 'marketing',
+    topIcon: 'marketing',
     points: [
-      'Chiến lược marketing toàn diện, định hướng tăng trưởng bền vững.',
-      'Website và nền tảng đặt hàng riêng, tích hợp hỗ trợ công nghệ.',
-      'Tối ưu khả năng tiếp cận khách hàng đa kênh, dễ dàng.',
-      'Hỗ trợ truyền thông & xây dựng thương hiệu tại từng điểm bán.'
+      { text: 'Chiến lược marketing toàn diện, định hướng tăng trưởng bền vững.', iconType: 'trending' },
+      { text: 'Website và nền tảng đặt hàng riêng, tích hợp hỗ trợ công nghệ.', iconType: 'web' },
+      { text: 'Tối ưu khả năng tiếp cận khách hàng đa kênh, dễ dàng.', iconType: 'speaker' },
+      { text: 'Hỗ trợ truyền thông & xây dựng thương hiệu tại từng điểm bán.', iconType: 'support' }
     ]
   }
 ];
 
 const AdvantageSection: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (gridRef.current) {
+      observer.observe(gridRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const renderPointIcon = (type: string) => {
+    switch (type) {
+      case 'leaves':
+        return (
+          <g fill="currentColor">
+            <path d="M12 21c0-1.5 0-2.5 0-3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M12 18c-1 0-3.5.5-6-1.5C4.5 15 4 13 4 11.5c0-1.5 1.5-2 3-2 3 0 5 3.5 5 8.5z" />
+            <path d="M12 18c1 0 3.5.5 6-1.5 1.5-1.5 2-3.5 2-5 0-1.5-1.5-2-3-2-3 0-5 3.5-5 8.5z" />
+          </g>
+        );
+      case 'users':
+        return (
+          <g>
+            <circle cx="12" cy="7" r="3" />
+            <path d="M6 21v-2a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v2" />
+            <circle cx="6" cy="11" r="2" />
+            <circle cx="18" cy="11" r="2" />
+          </g>
+        );
+      case 'clock':
+        return (
+          <g>
+            <circle cx="12" cy="12" r="9" />
+            <polyline points="12 7 12 12 15 14" />
+          </g>
+        );
+      case 'package':
+        return (
+          <g>
+            <path d="M20 10V20H4V10" />
+            <path d="M21 7H3V10H21V7Z" />
+            <path d="M12 7V3" />
+            <path d="M9 3H15" />
+          </g>
+        );
+      case 'users-cog':
+        return (
+          <g>
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+          </g>
+        );
+      case 'layout':
+        return (
+          <g>
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M3 9H21" />
+            <path d="M9 21V9" />
+          </g>
+        );
+      case 'badge':
+        return (
+          <g>
+            <circle cx="12" cy="8" r="6" />
+            <path d="M8 14L7 22L12 19L17 22L16 14" />
+          </g>
+        );
+      case 'handshake':
+        return (
+          <path d="M16 3H8v4H2v14h20V7h-6V3z M14 5v2h-4V5H14z" />
+        );
+      case 'trending':
+        return (
+          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+        );
+      case 'web':
+        return (
+          <g>
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            <path d="M2 12h20" />
+          </g>
+        );
+      case 'speaker':
+        return (
+          <path d="M11 5L6 9H2v6h4l5 4V5z M15.54 8.46a5 5 0 0 1 0 7.07" />
+        );
+      case 'support':
+        return (
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+        );
+      default:
+        return <polyline points="20 6 9 17 4 12" />;
+    }
+  };
+
   return (
     <section className={styles.section} id="advantages">
       <div className={styles.bgWrapper}>
@@ -82,48 +194,44 @@ const AdvantageSection: React.FC = () => {
           </div>
         </div>
 
-        <div className={styles.advantageGrid}>
-          {advantages.map((item) => (
-            <div key={item.id} className={styles.card}>
+        <div className={styles.advantageGrid} ref={gridRef}>
+          {advantages.map((item, index) => (
+            <div 
+              key={item.id} 
+              className={`${styles.card} ${isVisible ? styles.animate : ''}`}
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
               <div className={styles.cardNumber}>
                 <span>{item.num}</span>
               </div>
-              <div className={styles.iconCircle}>
-                {item.icon === 'bowl' && (
-                  <svg viewBox="0 0 24 24" className={styles.cardIcon}>
-                    <path d="M12 2C10.9 2 10 2.9 10 4V6C10 7.1 10.9 8 12 8S14 7.1 14 6V4C14 2.9 13.1 2 12 2Z" fill="currentColor" opacity="0.3"/>
-                    <path d="M21 11H3C2 11 1 12 1 13C1 17.4 4.6 21 9 21H15C19.4 21 23 17.4 23 13C23 12 22 11 21 11ZM12 19C8.7 19 6 16.3 6 13H18C18 16.3 15.3 19 12 19Z" fill="currentColor"/>
-                    <path d="M7 9C7 9.6 7.4 10 8 10C8.6 10 9 9.6 9 9C9 8.4 8.6 8 8 8C7.4 8 7 8.4 7 9Z" fill="currentColor"/>
-                    <path d="M15 9C15 9.6 15.4 10 16 10C16.6 10 17 9.6 17 9C17 8.4 16.6 8 16 8C15.4 8 15 8.4 15 9Z" fill="currentColor"/>
-                  </svg>
-                )}
-                {item.icon === 'cog' && (
-                  <svg viewBox="0 0 24 24" className={styles.cardIcon}>
-                    <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" fill="currentColor"/>
-                  </svg>
-                )}
-                {item.icon === 'marketing' && (
-                  <svg viewBox="0 0 24 24" className={styles.cardIcon}>
-                    <path d="M12 8L4.5 12.06L12 16.12L19.5 12.06L12 8ZM12 13.94L7.06 11.25L12 8.56L16.94 11.25L12 13.94Z" fill="currentColor" opacity="0.3"/>
-                    <path d="M21.41 11.58l-9-5c-.26-.14-.56-.14-.82 0l-9 5c-.37.2-.59.58-.59 1s.22.8.59 1l9 5c.13.07.27.1.41.1s.28-.03.41-.1l9-5c.37-.2.59-.58.59-1s-.22-.8-.59-1zM12 16.12L4.5 12.06L12 8L19.5 12.06L12 16.12z" fill="currentColor"/>
-                    <path d="M4.5 15.58L3.5 16.13V17.13L11.59 21.62C11.72 21.69 11.86 21.73 12 21.73C12.14 21.73 12.28 21.69 12.41 21.62L20.5 17.13V16.13L19.5 15.58L12 19.75L4.5 15.58Z" fill="currentColor"/>
-                  </svg>
-                )}
+              
+              <div className={styles.cardHeader}>
+                <h3 className={styles.titleSmall}>{item.title}</h3>
+                <h4 className={styles.titleLarge}>{item.subtitle}</h4>
               </div>
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <h4 className={styles.cardSubtitle}>{item.subtitle}</h4>
-              <ul className={styles.pointList}>
+
+              <div className={styles.cardDivider}></div>
+
+              <div className={styles.pointList}>
                 {item.points.map((point, idx) => (
-                  <li key={idx} className={styles.pointItem}>
-                    <span className={styles.checkIcon}>
-                      <svg viewBox="0 0 24 24">
-                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/>
+                  <div key={idx} className={styles.pointItem}>
+                    <div className={styles.pointIconCircle}>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        {renderPointIcon(point.iconType)}
                       </svg>
-                    </span>
-                    {point}
-                  </li>
+                    </div>
+                    <p className={styles.pointText}>{point.text}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
+
+              {/* Watermark Pattern */}
+              <div className={styles.watermark}>
+                <svg viewBox="0 0 200 200" opacity="0.05">
+                  <path d="M100 20C100 20 80 60 40 60C40 60 20 80 20 100C20 120 40 140 40 140C80 140 100 180 100 180C100 180 120 140 160 140C160 140 180 120 180 100C180 80 160 60 160 60C120 60 100 20 100 20Z" fill="currentColor" />
+                  <circle cx="100" cy="100" r="10" fill="currentColor" />
+                </svg>
+              </div>
             </div>
           ))}
         </div>
@@ -131,5 +239,6 @@ const AdvantageSection: React.FC = () => {
     </section>
   );
 };
+
 
 export default AdvantageSection;

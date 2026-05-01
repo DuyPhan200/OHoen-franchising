@@ -15,7 +15,14 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Space logo and right side */
   gap: 16px;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 32px; /* Gap between phone and button */
 }
 
 .navLogo {
@@ -131,6 +138,9 @@
   }
   .logo2 {
     height: 14px;
+  }
+  .navRight {
+    gap: 12px;
   }
   .navPhone {
     padding: 8px;

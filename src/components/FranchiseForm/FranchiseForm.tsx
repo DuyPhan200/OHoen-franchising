@@ -1,29 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './FranchiseForm.module.css';
-import { useFadeIn } from '../../hooks';
 
 const FranchiseForm: React.FC = () => {
   const [isSuccess, setIsSuccess] = useState(false);
-  const fadeInFormLeft = useFadeIn();
-  const fadeInFormRight = useFadeIn();
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API call
     setIsSuccess(true);
-    // Scroll to section start to show success message if needed, 
-    // but the form card is already in view.
   };
 
   return (
-    <section className={styles.formSec} id="form">
+    <section className={styles.formSec} id="form" ref={sectionRef}>
       <div className="wrap">
-        <div className={styles.formOuter}>
+        <div className={`${styles.formOuter} ${isVisible ? styles.animate : ''}`}>
           {/* Left: Content & Trust */}
-          <div ref={fadeInFormLeft} className={`fade ${styles.formLeft}`}>
-            <div className="eyebrow">Bắt đầu hành trình</div>
-            <h2>Tìm hiểu nhượng quyền<br /><em style={{ fontStyle: 'italic', color: 'var(--blue)' }}>O Hoèn</em></h2>
-            <p className="lead">
+          <div className={styles.formLeft}>
+            <div className={styles.brandAccent}>Bắt đầu hành trình</div>
+            <h2 className={styles.title}>Tìm hiểu nhượng quyền<br /><span>O Hoèn</span></h2>
+            <p className={styles.lead}>
               Điền thông tin để nhận tư vấn miễn phí. Đội ngũ O Hoèn sẽ phản hồi trong 24 giờ với bộ tài liệu đầy đủ — không ràng buộc.
             </p>
 
@@ -50,7 +64,7 @@ const FranchiseForm: React.FC = () => {
           </div>
 
           {/* Right: The Form Card */}
-          <div ref={fadeInFormRight} className={`fade ${styles.formRight}`}>
+          <div className={styles.formRight}>
             <div className={styles.formBox}>
               {!isSuccess ? (
                 <form id="mainForm" onSubmit={handleSubmit}>
@@ -88,17 +102,19 @@ const FranchiseForm: React.FC = () => {
                       <option>Chưa quyết định</option>
                     </select>
                   </div>
-                  <button type="submit" className={styles.fSubmit}>Đăng ký nhận tư vấn miễn phí →</button>
+                  <button type="submit" className={styles.fSubmit}>ĐĂNG KÝ NHẬN TƯ VẤN MIỄN PHÍ</button>
                 </form>
               ) : (
                 <div className={styles.formSuccess}>
-                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-                    <polyline points="22 4 12 14.01 9 11.01" />
-                  </svg>
-                  <h3>Đã nhận thông tin!</h3>
+                  <div className={styles.successIcon}>
+                    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                  </div>
+                  <h3>Đã gửi thành công!</h3>
                   <p>
-                    Đội ngũ O Hoèn sẽ liên hệ trong vòng 24 giờ làm việc với bộ tài liệu nhượng quyền đầy đủ. Cảm ơn bạn đã tin tưởng O Hoèn.
+                    Đội ngũ O Hoèn sẽ liên hệ trong vòng 24 giờ làm việc. Cảm ơn bạn đã quan tâm.
                   </p>
                 </div>
               )}
@@ -114,11 +130,6 @@ const FranchiseForm: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Wave bottom divider */}
-      <div className={styles.waveDivider}>
-        <svg viewBox="0 0 1440 48" preserveAspectRatio="none"><path d="M0,20 C480,50 960,10 1440,0 L1440,49 L0,49 Z"></path></svg>
       </div>
     </section>
   );
