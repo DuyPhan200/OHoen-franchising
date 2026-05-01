@@ -224,13 +224,15 @@
     padding-top: 56px; 
     background-size: cover; 
     background-attachment: scroll; 
+    min-height: auto;
   }
-  .heroBody { padding: 40px 20px; margin-left: 0; }
+  .heroBody { padding: 40px 20px 60px; margin-left: 0; }
   .heroContent { align-items: center; text-align: center; }
-  .heroTopLogo { margin-left: 0; }
-  .heroBrandWrap { justify-content: center; }
-  .heroDividerLine { margin: 24px auto; }
-  .heroFeatures { justify-content: center; max-width: 100%; }
-  .heroBrandScript { font-size: 60px; }
-  .heroTitleMain, .heroBrandText { font-size: 36px; }
+  .heroTopLogo { margin-left: 0; margin-bottom: 30px; }
+  .heroBrandWrap { justify-content: center; gap: 8px; }
+  .heroDividerLine { margin: 20px auto; }
+  .heroFeatures { justify-content: center; max-width: 100%; gap: 15px; }
+  .heroBrandScript { font-size: 50px; }
+  .heroTitleMain, .heroBrandText { font-size: 32px; }
+  .heroDescription { font-size: 13px; margin-bottom: 30px; }
 }
