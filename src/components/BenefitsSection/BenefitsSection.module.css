@@ -1,0 +1,145 @@
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+
+.bgWrapper {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.bgImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  min-height: 500px;
+  object-fit: cover;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 90%;
+  max-width: 1100px;
+  text-align: center;
+  margin-top: -60px; /* Di chuyển lên trên */
+}
+
+.title {
+  font-family: var(--font-heading, "EB Garamond", serif);
+  font-size: 52px;
+  color: #042442; /* Precise deep blue/navy from image */
+  margin-bottom: 50px;
+  font-weight: 800; /* Extra bold as in image */
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Increased letter spacing to match image */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.benefitBlock {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(178, 143, 79, 0.15); /* Light gold border */
+  padding: 24px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(4, 36, 66, 0.04);
+  /* Initial state */
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.benefitBlock.animate {
+  animation: slideUp 0.6s ease forwards;
+}
+
+.benefitBlock:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(178, 143, 79, 0.12);
+  border-color: #d4af37;
+}
+
+.checkIcon {
+  width: 32px;
+  height: 32px;
+  background: #d4af37; /* Gold background */
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 8px;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+
+.checkIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.benefitText {
+  color: #042442; /* Deep Navy */
+  font-size: 15px;
+  font-weight: 700; /* Bolder for strength */
+  line-height: 1.4;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+  .bgWrapper {
+    display: none;
+  }
+  .container {
+    position: relative;
+    height: auto;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,201 @@
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to top, transparent, rgba(5, 15, 30, 0.5));
+  pointer-events: none;
+  z-index: 5;
+}
+
+.bgWrapper {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.bgImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  padding-left: 180px; /* Moved further right as requested */
+}
+
+.content {
+  width: 100%;
+  max-width: 650px; /* Restricted width to leave space for the bowl on the right */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  font-family: var(--font-heading, "EB Garamond", serif);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-heading, "EB Garamond", serif);
+  font-size: 64px;
+  line-height: 1.1;
+  color: var(--gold, #d4af37);
+  margin: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ornament {
+  color: var(--gold, #d4af37);
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.ornamentIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.description {
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 800px; /* Slightly wider than header to match the image layout */
+  margin-top: 20px;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Initial state */
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.item.animate {
+  animation: slideInRight 0.8s ease forwards;
+}
+
+.iconCircle {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--gold, #d4af37);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold, #d4af37);
+  margin-bottom: 16px;
+}
+
+.iconCircle svg {
+  width: 32px;
+  height: 32px;
+}
+
+.itemTitle {
+  font-family: var(--font-heading, "EB Garamond", serif);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.itemText {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .title {
+    font-size: 48px;
+  }
+  .content {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding: 60px 0;
+  }
+  .container {
+    position: relative;
+    padding: 0 20px;
+    height: auto;
+    justify-content: center;
+  }
+  .content {
+    max-width: 100%;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .bgWrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
