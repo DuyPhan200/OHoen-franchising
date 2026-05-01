@@ -1,5 +1,6 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import FranchisePage from './components/FranchisePage';
+import StoryPage from './components/StoryPage';
 import './App.css';
 
 /**
@@ -9,6 +10,12 @@ import './App.css';
 function FranchiseRoute() {
   return (
     <FranchisePage />
+  );
+}
+
+function StoryRoute() {
+  return (
+    <StoryPage />
   );
 }
 
@@ -23,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<FranchiseRoute />} />
         <Route path="/franchise" element={<FranchiseRoute />} />
+        <Route path="/cau-chuyen" element={<StoryRoute />} />
       </Routes>
     </div>
   );

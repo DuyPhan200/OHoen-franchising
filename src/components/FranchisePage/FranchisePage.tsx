@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { 
   Header, 
   HeroSection, 
-  SoulSection, 
-  WhySection, 
   InvestmentPackageSection, 
-  FranchiseVision, 
-  TestimonialsSection, 
-  FAQSection, 
+  MenuSection,
+  AdvantageSection,
+  WhySection, 
   FranchiseForm, 
   Footer, 
   StickyBar 
@@ -67,12 +65,10 @@ const FranchisePage: React.FC = () => {
       
       <main id="main-content">
         <HeroSection />
-        <SoulSection />
-        <TestimonialsSection />
+        <MenuSection />
+        <AdvantageSection />
         <InvestmentPackageSection />
         <WhySection />
-        <FAQSection />
-        <FranchiseVision />
         <FranchiseForm />
       </main>
 
