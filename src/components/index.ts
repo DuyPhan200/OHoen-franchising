@@ -12,6 +12,8 @@ export { default as MetricsSection } from './MetricsSection';
 export { default as SoulSection } from './SoulSection';
 export { default as WhySection } from './WhySection';
 export { default as InvestmentPackageSection } from './InvestmentPackageSection';
+export { default as MenuSection } from './MenuSection';
+export { default as AdvantageSection } from './AdvantageSection';
 export { default as FranchiseVision } from './FranchiseVision';
 export { default as TestimonialsSection } from './TestimonialsSection';
 export { default as FAQSection } from './FAQSection';
@@ -24,6 +26,7 @@ export { NotificationProvider, useNotification } from './Notification/Notificati
 
 // Pages
 export { default as FranchisePage } from './FranchisePage';
+export { default as StoryPage } from './StoryPage';
 
 // Obsolete/Legacy Sections (Kept for compatibility if needed, but not used in FranchisePage)
 export { default as StatsSection } from './StatsSection';

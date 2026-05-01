@@ -22,7 +22,42 @@
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
   margin-right: auto;
+  margin-left: 32px;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #fff;
+}
+
+.navLinkActive {
+  color: var(--gold);
+}
+
+.navLinkActive::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--gold);
+  border-radius: 2px;
 }
 
 .logo1 {
@@ -87,6 +122,9 @@
   }
   .navLogo {
     gap: 12px;
+  }
+  .navLinks {
+    display: none; /* Hide on very small screens or make it a scrollable row */
   }
   .logo1 {
     height: 24px;

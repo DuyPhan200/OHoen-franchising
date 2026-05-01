@@ -1,0 +1,256 @@
+.section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  background-color: #050f1e;
+  overflow: hidden;
+  padding: 0;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(to top, transparent, rgba(5, 15, 30, 0.4));
+  pointer-events: none;
+  z-index: 5;
+}
+
+.bgWrapper {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.bgImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 3;
+}
+
+.topRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 180px;
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.brandBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  flex-shrink: 0;
+}
+
+.topLogo {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 4px;
+}
+
+.badgeScript {
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.badgeSub {
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  color: var(--gold, #d4af37);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eyebrowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.line {
+  height: 1px;
+  width: 40px;
+  background: var(--gold, #d4af37);
+}
+
+.eyebrowText {
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.mainTitle {
+  font-family: var(--font-heading, "EB Garamond", serif);
+  font-size: 100px;
+  line-height: 1;
+  color: var(--gold, #d4af37);
+  margin: 0 0 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.subHeader {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Grid & Cards */
+.advantageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: 95%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: 80px;
+}
+
+.card {
+  background: #fdf5e6;
+  border-radius: 24px;
+  padding: 60px 32px 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.cardNumber {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  background: #050f1e;
+  color: #fff;
+  padding: 8px 12px 12px;
+  border-radius: 0 0 4px 4px;
+  font-weight: 700;
+  font-size: 14px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+}
+
+.iconCircle {
+  width: 70px;
+  height: 70px;
+  background: #050f1e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold, #d4af37);
+  margin-bottom: 20px;
+  border: 3px solid #fdf5e6;
+  outline: 2px solid #050f1e;
+}
+
+.cardIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.cardTitle {
+  font-family: var(--font-heading, "EB Garamond", serif);
+  font-size: 30px;
+  color: #8b4513; /* Brownish gold */
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+
+.cardSubtitle {
+  font-family: var(--font-heading, "EB Garamond", serif);
+  font-size: 36px;
+  color: #b28f4f;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.pointList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pointItem {
+  display: flex;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: #b28f4f;
+  border: 1px solid #b28f4f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+}
+
+@media (max-width: 991px) {
+  .container {
+    position: relative;
+    padding: 40px 20px;
+    height: auto;
+  }
+  .topLogoArea {
+    position: static;
+    margin-bottom: 30px;
+  }
+  .mainTitle {
+    font-size: 40px;
+  }
+  .advantageGrid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}

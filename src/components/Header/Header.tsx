@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header: React.FC = () => {
@@ -6,8 +7,24 @@ const Header: React.FC = () => {
     <nav className={styles.nav} id="nav">
       <div className={styles.navWrap}>
         <div className={styles.navLogo}>
-          <img src="/Logo1.svg" alt="Cháo Nghêu O Hoèn" className={styles.logo1} />
-          <img src="/Logo2.svg" alt="Nhượng quyền thương hiệu" className={styles.logo2} />
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <img src="/Logo1.svg" alt="Cháo Nghêu O Hoèn" className={styles.logo1} />
+            <img src="/Logo2.svg" alt="Nhượng quyền thương hiệu" className={styles.logo2} />
+          </Link>
+        </div>
+        <div className={styles.navLinks}>
+          <NavLink 
+            to="/" 
+            className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink}
+          >
+            Nhượng quyền
+          </NavLink>
+          <NavLink 
+            to="/cau-chuyen" 
+            className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink}
+          >
+            Câu chuyện
+          </NavLink>
         </div>
         <a href="tel:0967564441" className={styles.navPhone}>
           <svg viewBox="0 0 24 24" className={styles.navPhoneIcon}>
