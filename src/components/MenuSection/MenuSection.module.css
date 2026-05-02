@@ -5,6 +5,11 @@
   background-color: #050f1e;
   overflow: hidden;
   padding: 0;
+  background-image: url('/MenuSection/background_desktop.svg');
+  background-size: 100% 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 .section::before {
@@ -32,15 +37,7 @@
 }
 
 /* Background image covering the entire section properly */
-.bgImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: fill; /* This ensures the whole image is mapped to the box */
-  z-index: 1;
-}
+/* .bgImage is no longer used, background moved to .section */
 
 /* The container restricting max width */
 .container {
@@ -48,11 +45,12 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding: 80px 40px;
+  padding: 25px 5% 25px 60px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   z-index: 3;
+  gap: 40px;
 }
 
 /* The grid on the right side */
@@ -60,58 +58,16 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  width: 75%;
+  flex: 1;
   max-width: 800px;
-  margin-right: 5%;
 }
 
-@media (max-width: 991px) {
-  .section {
-    flex-direction: column;
-  }
-  .container {
-    justify-content: center;
-    padding: 60px 20px;
-  }
-  .menuGrid {
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .leftContent {
-    position: static;
-    width: 100%;
-    min-width: 0;
-    margin-bottom: 40px;
-    align-items: center;
-    text-align: center;
-  }
-  .brandBadge {
-    align-items: center;
-  }
-  .mainTitle {
-    font-size: 32px;
-  }
-  .goldText {
-    white-space: normal;
-  }
-  .textDivider {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .menuGrid {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* Left Content Styles */
 .leftContent {
-  position: absolute;
-  left: 100px;
-  top: 15%;
-  width: auto;
-  min-width: 500px;
+  position: relative;
+  flex: 0 1 auto;
+  min-width: 450px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -123,7 +79,7 @@
   display: flex;
   flex-direction: column;
   align-items: center; /* Center to match the logo element look */
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   width: fit-content;
 }
 
@@ -178,7 +134,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   width: 100%;
   max-width: 400px;
 }
@@ -200,29 +156,65 @@
   font-size: 13px;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.8;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   max-width: 450px;
   font-weight: 400;
   letter-spacing: 0.5px;
 }
 
 .ctaButton {
-  background: var(--gold, #d4af37);
-  color: var(--bluedark, #0a1f35);
-  padding: 12px 32px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  background-color: #B28F4F;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 80px;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: none;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 24px;
+  outline: none;
+  width: fit-content;
 }
 
 .ctaButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-  background: #e5be3d;
+  background-color: #CBB07C;
+  transform: scale(1.02);
+}
+
+.ctaButton:active {
+  transform: scale(0.98);
+}
+
+.ctaIcon {
+  color: #000;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-2px);
+}
+
+.ctaText {
+  color: #000;
+  font-family: var(--font-heading, "EB Garamond", serif);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+.desktopOnly {
+  display: flex;
 }
 
 /* Card Styling */
@@ -371,4 +363,167 @@
   display: block;
   width: 100%;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+@media (max-width: 767px) {
+  .section {
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: url('/MenuSection/background_mobile.svg') no-repeat center center / cover !important;
+    margin-top: -1px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .section::before,
+  .section::after {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px var(--px) 15px;
+  }
+
+  .menuGrid {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: -38px;
+  }
+
+  .leftContent {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brandBadge {
+    align-self: flex-start;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .topLogo {
+    width: 22px;
+  }
+
+  .badgeScript {
+    font-size: 26px;
+  }
+
+  .mainTitle {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  .whiteText {
+    color: var(--bluedark, #0a1f35);
+  }
+
+  .goldText {
+    white-space: normal;
+    background: linear-gradient(to right, #B28F4F 0%, #8c6d31 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .textDivider {
+    justify-content: center;
+    margin-bottom: 12px;
+    gap: 10px;
+    max-width: 200px;
+  }
+
+  .leftDesc {
+    color: #333;
+    font-size: 12px;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .ctaButton {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 60px;
+    margin-top: -25px;
+    background-color: var(--blue, #145E99);
+  }
+
+  .ctaIcon {
+    color: #fff;
+  }
+  .ctaIcon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ctaText {
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  .mobileOnly {
+    display: flex;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+
+  /* Grid items adjustments */
+  .menuCard {
+    transform: translateY(20px);
+  }
+
+  .menuCard.animate {
+    animation: slideInUp 0.6s ease forwards;
+  }
+
+  .menuInner {
+    padding: 8px 4px 12px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .desc {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menuGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  .mainTitle {
+    font-size: 30px;
+  }
+  .leftContent {
+    margin-bottom: 12px;
+  }
+  .imageWrapper {
+    width: 55%;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

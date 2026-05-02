@@ -39,7 +39,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
+  background-color: #050f1e;
 }
 
 /* App Container - Requirement 7.5 */
@@ -48,7 +48,7 @@ body {
   max-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #ffffff;
+  background-color: #050f1e;
 }
 
 /* Requirement 7.4: Ensure usability across all viewport widths */
