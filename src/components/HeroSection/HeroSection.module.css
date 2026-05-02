@@ -41,7 +41,7 @@
 
 .heroBody {
   max-width: var(--max);
-  margin-left: 100px;
+  margin-left: 60px;
   padding: 20px 0 64px 0;
   display: flex;
   justify-content: flex-start;
@@ -144,14 +144,14 @@
   width: 60px;
   height: 2px;
   background: linear-gradient(to right, #FFFFFF 0%, #B28F4F 100%);
-  margin: 12px 0 20px 0;
+  margin: 4px 0 16px 0;
 }
 
 .heroDescription {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.7;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   max-width: 500px;
 }
 
@@ -176,7 +176,7 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 24px;
+  margin-top: 12px;
   text-transform: uppercase;
 }
 
