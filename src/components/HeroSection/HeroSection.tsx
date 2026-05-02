@@ -31,6 +31,14 @@ const HeroSection: React.FC = () => {
             <strong>Góp phần giữ gìn và phát triển ẩm thực truyền thống, đặc sản làng nghề văn hoá địa phương.</strong>
           </p>
 
+          <button className={styles.heroCTA}>
+            TÌM HIỂU NGAY
+            <svg className={styles.ctaArrow} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+
         </div>
       </div>
     </section>

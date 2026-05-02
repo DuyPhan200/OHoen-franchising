@@ -14,7 +14,7 @@
   /* Dark background fallback */
   background-color: #050f1e;
   /* Ensure full coverage without gaps */
-  background-image: url('/herosection1.svg');
+  background-image: url('/HeroSection/background_desktop.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -144,7 +144,7 @@
   width: 60px;
   height: 2px;
   background: linear-gradient(to right, #FFFFFF 0%, #B28F4F 100%);
-  margin: 24px 0;
+  margin: 12px 0 20px 0;
 }
 
 .heroDescription {
@@ -158,8 +158,36 @@
 .heroDescription strong {
   color: #B28F4F;
   display: block;
-  margin-top: 10px;
+  margin-top: 4px;
   font-weight: 700;
+}
+
+.heroCTA {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #B28F4F;
+  color: #050f1e;
+  border: none;
+  padding: 14px 28px;
+  font-family: var(--font-heading, serif);
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 24px;
+  text-transform: uppercase;
+}
+
+.heroCTA:hover {
+  background: #CBB07C;
+  transform: translateY(-2px);
+}
+
+.ctaArrow {
+  width: 20px;
+  height: 20px;
 }
 
 /* Features Row Styling */
@@ -217,32 +245,140 @@
 
 /* Responsive Adjustments */
 @media(max-width: 1200px) {
-  .heroBody { margin-left: 60px; }
-  .heroTitleMain { font-size: 48px; }
-  .heroBrandText { font-size: 48px; }
-  .heroBrandScript { font-size: 70px; }
+  .heroBody {
+    margin-left: 60px;
+  }
+
+  .heroTitleMain {
+    font-size: 48px;
+  }
+
+  .heroBrandText {
+    font-size: 48px;
+  }
+
+  .heroBrandScript {
+    font-size: 70px;
+  }
 }
 
 @media(max-width: 1024px) {
-  .heroBody { margin-left: var(--px); }
-  .heroFeatures { gap: 20px; }
+  .heroBody {
+    margin-left: var(--px);
+  }
+
+  .heroFeatures {
+    gap: 20px;
+  }
 }
 
 @media(max-width: 767px) {
-  .heroSection { 
-    margin-top: -56px; 
-    padding-top: 56px; 
-    background-size: cover; 
-    background-attachment: scroll; 
-    min-height: 72vh;
+  .heroSection {
+    margin-top: -56px;
+    padding-top: 56px;
+    background-image: url('/HeroSection/background_mobile.svg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-attachment: scroll;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
-  .heroBody { padding: 40px 20px 60px; margin-left: 0; }
-  .heroContent { align-items: center; text-align: center; }
-  .heroTopLogo { margin-left: 0; margin-bottom: 30px; }
-  .heroBrandWrap { justify-content: center; gap: 8px; }
-  .heroDividerLine { margin: 20px auto; }
-  .heroFeatures { justify-content: center; max-width: 100%; gap: 15px; }
-  .heroBrandScript { font-size: 50px; }
-  .heroTitleMain, .heroBrandText { font-size: 32px; }
-  .heroDescription { font-size: 13px; margin-bottom: 30px; }
+
+  .heroBody {
+    padding: 25px 30px 0;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .heroContent {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .heroTopLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .shellIcon {
+    width: 28px;
+  }
+
+  .logoScript {
+    font-size: 18px;
+  }
+
+  .logoSub {
+    font-size: 6px;
+  }
+
+  .heroTitleMain {
+    display: block;
+    font-size: 20px;
+    line-height: 1.1;
+    text-align: left;
+    background: linear-gradient(to right, #FFFFFF 0%, #B28F4F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .heroBrandWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 4px;
+  }
+
+  .heroBrandText {
+    display: block;
+    font-size: 18px;
+    line-height: 1.1;
+    padding-bottom: 0;
+    color: #FFFFFF;
+  }
+
+  .heroBrandScript {
+    font-size: 40px;
+    padding: 5px 0;
+    margin-left: -5px;
+    background: linear-gradient(to right, #FFFFFF 0%, #B28F4F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .heroDividerLine {
+    display: block;
+    margin: 8px 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(to right, #FFFFFF 0%, #B28F4F 100%);
+  }
+
+  .heroDescription {
+    display: block;
+    font-size: 11px;
+    text-align: left;
+    max-width: 190px;
+    margin: 0;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .heroCTA {
+    padding: 12px 24px;
+    font-size: 13px;
+    margin-top: 20px;
+  }
+
+  .heroFeatures {
+    display: none;
+  }
 }
