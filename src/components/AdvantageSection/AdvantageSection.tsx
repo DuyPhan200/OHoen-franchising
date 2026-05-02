@@ -167,14 +167,6 @@ const AdvantageSection: React.FC = () => {
 
   return (
     <section className={styles.section} id="advantages">
-      <div className={styles.bgWrapper}>
-        <img
-          src="/AdventageSection/background.svg"
-          alt="Advantage Background"
-          className={styles.bgImage}
-        />
-      </div>
-
       <div className={styles.container}>
         <div className={styles.topRow}>
           <div className={styles.brandBadge}>
@@ -191,6 +183,12 @@ const AdvantageSection: React.FC = () => {
             </div>
             <h2 className={styles.mainTitle}>CHÁO NGHÊU<br />O HOÈN</h2>
             <p className={styles.subHeader}>Tối ưu vận hành – Chuẩn hoá sản phẩm – Mở rộng bền vững</p>
+            
+            <div className={styles.dividerShell}>
+              <svg viewBox="0 0 24 24" className={styles.midShell}>
+                <path d="M10.8,21.5C9.3,21,2,14.6,2,10.5C2,5.8,6.5,2,12,2s10,3.8,10,8.5c0,4.1-7.3,10.5-8.8,11.5L12,22L10.8,21.5z M12,19c1.5-1.1,8-7.5,8-8.5c0-3.6-3.6-6.5-8-6.5S4,6.9,4,10.5c0,1,6.5,7.4,8,8.5V19z M11,7h2v9h-2V7z M7.5,8.5h1.5v6H7.5V8.5z M15,8.5h1.5v6H15V8.5z" />
+              </svg>
+            </div>
           </div>
         </div>
 
@@ -206,36 +204,65 @@ const AdvantageSection: React.FC = () => {
                   <span>{item.num}</span>
                 </div>
 
-                <div className={styles.cardHeader}>
-                  <h3 className={styles.titleSmall}>{item.title}</h3>
-                  <h4 className={styles.titleLarge}>{item.subtitle}</h4>
-                </div>
-
-                <div className={styles.cardDivider}></div>
-
-                <div className={styles.pointList}>
-                  {item.points.map((point, idx) => (
-                    <div key={idx} className={styles.pointItem}>
-                      <div className={styles.pointIconCircle}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          {renderPointIcon(point.iconType)}
-                        </svg>
-                      </div>
-                      <p className={styles.pointText}>{point.text}</p>
+                <div className={styles.cardContentWrapper}>
+                  <div className={styles.cardLeftSide}>
+                    <div className={styles.iconCircle}>
+                      <svg viewBox="0 0 24 24" className={styles.cardIcon} fill="none" stroke="currentColor" strokeWidth="2">
+                        {renderPointIcon(item.topIcon === 'bowl' ? 'leaves' : item.topIcon === 'cog' ? 'users-cog' : 'speaker')}
+                      </svg>
                     </div>
-                  ))}
+                    <div className={styles.cardHeader}>
+                      <h3 className={styles.titleSmall}>{item.title}</h3>
+                      <h4 className={styles.titleLarge}>{item.subtitle}</h4>
+                    </div>
+                    <div className={styles.mobileDivider}></div>
+                  </div>
+
+                  <div className={styles.pointList}>
+                    {item.points.map((point, idx) => (
+                      <div key={idx} className={styles.pointItem}>
+                        <div className={styles.pointIconCircle}>
+                          <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                          </svg>
+                        </div>
+                        <p className={styles.pointText}>{point.text}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Watermark Pattern */}
                 <div className={styles.watermark}>
-                  <svg viewBox="0 0 200 200" opacity="0.05">
-                    <path d="M100 20C100 20 80 60 40 60C40 60 20 80 20 100C20 120 40 140 40 140C80 140 100 180 100 180C100 180 120 140 160 140C160 140 180 120 180 100C180 80 160 60 160 60C120 60 100 20 100 20Z" fill="currentColor" />
-                    <circle cx="100" cy="100" r="10" fill="currentColor" />
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10.8,21.5C9.3,21,2,14.6,2,10.5C2,5.8,6.5,2,12,2s10,3.8,10,8.5c0,4.1-7.3,10.5-8.8,11.5L12,22L10.8,21.5z M12,19c1.5-1.1,8-7.5,8-8.5c0-3.6-3.6-6.5-8-6.5S4,6.9,4,10.5c0,1,6.5,7.4,8,8.5V19z M11,7h2v9h-2V7z M7.5,8.5h1.5v6H7.5V8.5z M15,8.5h1.5v6H15V8.5z" />
                   </svg>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Bottom CTA Bar */}
+        <div className={styles.bottomBar}>
+          <div className={styles.bottomBarContent}>
+            <div className={styles.barLeft}>
+              <svg viewBox="0 0 24 24" className={styles.barShell}>
+                <path d="M10.8,21.5C9.3,21,2,14.6,2,10.5C2,5.8,6.5,2,12,2s10,3.8,10,8.5c0,4.1-7.3,10.5-8.8,11.5L12,22L10.8,21.5z M12,19c1.5-1.1,8-7.5,8-8.5c0-3.6-3.6-6.5-8-6.5S4,6.9,4,10.5c0,1,6.5,7.4,8,8.5V19z M11,7h2v9h-2V7z M7.5,8.5h1.5v6H7.5V8.5z M15,8.5h1.5v6H15V8.5z" />
+              </svg>
+              <div className={styles.barText}>
+                <p className={styles.barTopText}>ĐỒNG HÀNH CÙNG O HOÈN</p>
+                <h3 className={styles.barMainTitle}>KIẾN TẠO THƯƠNG HIỆU CHÁO NGHÊU</h3>
+                <p className={styles.barScript}>Chất lượng – Uy tín – Bền vững</p>
+              </div>
+            </div>
+            <button className={styles.barButton}>
+              TÌM HIỂU NGAY
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

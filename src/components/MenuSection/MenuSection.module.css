@@ -406,16 +406,21 @@
 
   .brandBadge {
     align-self: flex-start;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 10px;
+    width: fit-content;
   }
 
   .topLogo {
-    width: 22px;
+    width: 28px;
   }
 
   .badgeScript {
-    font-size: 26px;
+    font-size: 18px;
+  }
+
+  .badgeSub {
+    font-size: 6px;
   }
 
   .mainTitle {
