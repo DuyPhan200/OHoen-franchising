@@ -101,17 +101,21 @@
   font-family: var(--font-heading, "EB Garamond", serif);
   font-size: 56px;
   font-weight: 800;
-  color: #B28F4F;
+  background: linear-gradient(to right, #FFFFFF 0%, #B28F4F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
   letter-spacing: 1px;
+  padding-bottom: 4px;
 }
 
 .heroBrandWrap {
   display: flex;
   align-items: baseline;
   gap: 12px;
-  margin-top: 2px;
+  margin-top: 0px;
   flex-wrap: wrap;
 }
 
@@ -120,20 +124,26 @@
   font-size: 56px;
   font-weight: 500;
   color: #FFFFFF;
+  line-height: 1.2;
+  padding-bottom: 5px;
 }
 
 .heroBrandScript {
   font-family: 'Great Vibes', cursive;
-  font-size: 80px;
-  color: #B28F4F;
+  font-size: 100px;
+  background: linear-gradient(to right, #FFFFFF 0%, #B28F4F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 400;
-  line-height: 0.8;
+  line-height: 1.2;
+  padding: 10px 0;
 }
 
 .heroDividerLine {
   width: 60px;
   height: 2px;
-  background: #B28F4F;
+  background: linear-gradient(to right, #FFFFFF 0%, #B28F4F 100%);
   margin: 24px 0;
 }
 

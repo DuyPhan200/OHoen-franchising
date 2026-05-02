@@ -201,36 +201,38 @@ const AdvantageSection: React.FC = () => {
               className={`${styles.card} ${isVisible ? styles.animate : ''}`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className={styles.cardNumber}>
-                <span>{item.num}</span>
-              </div>
-              
-              <div className={styles.cardHeader}>
-                <h3 className={styles.titleSmall}>{item.title}</h3>
-                <h4 className={styles.titleLarge}>{item.subtitle}</h4>
-              </div>
-
-              <div className={styles.cardDivider}></div>
-
-              <div className={styles.pointList}>
-                {item.points.map((point, idx) => (
-                  <div key={idx} className={styles.pointItem}>
-                    <div className={styles.pointIconCircle}>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        {renderPointIcon(point.iconType)}
-                      </svg>
+              <div className={styles.cardInner}>
+                <div className={styles.cardNumber}>
+                  <span>{item.num}</span>
+                </div>
+                
+                <div className={styles.cardHeader}>
+                  <h3 className={styles.titleSmall}>{item.title}</h3>
+                  <h4 className={styles.titleLarge}>{item.subtitle}</h4>
+                </div>
+  
+                <div className={styles.cardDivider}></div>
+  
+                <div className={styles.pointList}>
+                  {item.points.map((point, idx) => (
+                    <div key={idx} className={styles.pointItem}>
+                      <div className={styles.pointIconCircle}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          {renderPointIcon(point.iconType)}
+                        </svg>
+                      </div>
+                      <p className={styles.pointText}>{point.text}</p>
                     </div>
-                    <p className={styles.pointText}>{point.text}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Watermark Pattern */}
-              <div className={styles.watermark}>
-                <svg viewBox="0 0 200 200" opacity="0.05">
-                  <path d="M100 20C100 20 80 60 40 60C40 60 20 80 20 100C20 120 40 140 40 140C80 140 100 180 100 180C100 180 120 140 160 140C160 140 180 120 180 100C180 80 160 60 160 60C120 60 100 20 100 20Z" fill="currentColor" />
-                  <circle cx="100" cy="100" r="10" fill="currentColor" />
-                </svg>
+                  ))}
+                </div>
+  
+                {/* Watermark Pattern */}
+                <div className={styles.watermark}>
+                  <svg viewBox="0 0 200 200" opacity="0.05">
+                    <path d="M100 20C100 20 80 60 40 60C40 60 20 80 20 100C20 120 40 140 40 140C80 140 100 180 100 180C100 180 120 140 160 140C160 140 180 120 180 100C180 80 160 60 160 60C120 60 100 20 100 20Z" fill="currentColor" />
+                    <circle cx="100" cy="100" r="10" fill="currentColor" />
+                  </svg>
+                </div>
               </div>
             </div>
           ))}

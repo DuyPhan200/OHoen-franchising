@@ -6,6 +6,16 @@ const FranchiseForm: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    location: ''
+  });
+
+  const isFormComplete = formData.name.trim() !== '' && 
+                         formData.phone.trim() !== '' && 
+                         formData.location !== '';
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -26,7 +36,9 @@ const FranchiseForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSuccess(true);
+    if (isFormComplete) {
+      setIsSuccess(true);
+    }
   };
 
   return (
@@ -71,11 +83,23 @@ const FranchiseForm: React.FC = () => {
                   <div className={styles.fRow}>
                     <div className={styles.fg}>
                       <label>Họ và tên *</label>
-                      <input type="text" placeholder="Nguyễn Văn A" required />
+                      <input 
+                        type="text" 
+                        placeholder="Nguyễn Văn A" 
+                        required 
+                        value={formData.name}
+                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      />
                     </div>
                     <div className={styles.fg}>
                       <label>Số điện thoại *</label>
-                      <input type="tel" placeholder="09x xxx xxxx" required />
+                      <input 
+                        type="tel" 
+                        placeholder="09x xxx xxxx" 
+                        required 
+                        value={formData.phone}
+                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      />
                     </div>
                   </div>
                   <div className={styles.fg}>
@@ -84,7 +108,11 @@ const FranchiseForm: React.FC = () => {
                   </div>
                   <div className={styles.fg}>
                     <label>Khu vực muốn mở nhượng quyền *</label>
-                    <select required defaultValue="">
+                    <select 
+                      required 
+                      value={formData.location}
+                      onChange={(e) => setFormData({...formData, location: e.target.value})}
+                    >
                       <option value="" disabled>Chọn khu vực của bạn</option>
                       <option>Đà Nẵng</option>
                       <option>TP. Hồ Chí Minh</option>
@@ -102,7 +130,13 @@ const FranchiseForm: React.FC = () => {
                       <option>Chưa quyết định</option>
                     </select>
                   </div>
-                  <button type="submit" className={styles.fSubmit}>ĐĂNG KÝ NHẬN TƯ VẤN MIỄN PHÍ</button>
+                  <button 
+                    type="submit" 
+                    className={`${styles.fSubmit} ${isFormComplete ? styles.pulse : ''}`}
+                    disabled={!isFormComplete}
+                  >
+                    ĐĂNG KÝ NHẬN TƯ VẤN MIỄN PHÍ
+                  </button>
                 </form>
               ) : (
                 <div className={styles.formSuccess}>
@@ -118,11 +152,6 @@ const FranchiseForm: React.FC = () => {
                   </p>
                 </div>
               )}
-
-              <p className={styles.fNote}>
-                Thông tin bảo mật · Không spam · <a href="#">Chính sách bảo mật</a>
-              </p>
-
               <div className={styles.fHotline}>
                 <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.96a16 16 0 006.13 6.13l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>
                 Hoặc gọi: <strong>096 756 44 41</strong> · Zalo cùng số
