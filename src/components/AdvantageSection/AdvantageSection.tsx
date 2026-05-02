@@ -168,13 +168,13 @@ const AdvantageSection: React.FC = () => {
   return (
     <section className={styles.section} id="advantages">
       <div className={styles.bgWrapper}>
-        <img 
-          src="/test/Thiết kế chưa có tên.svg" 
-          alt="Advantage Background" 
-          className={styles.bgImage} 
+        <img
+          src="/AdventageSection/background.svg"
+          alt="Advantage Background"
+          className={styles.bgImage}
         />
       </div>
-      
+
       <div className={styles.container}>
         <div className={styles.topRow}>
           <div className={styles.brandBadge}>
@@ -196,8 +196,8 @@ const AdvantageSection: React.FC = () => {
 
         <div className={styles.advantageGrid} ref={gridRef}>
           {advantages.map((item, index) => (
-            <div 
-              key={item.id} 
+            <div
+              key={item.id}
               className={`${styles.card} ${isVisible ? styles.animate : ''}`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
@@ -205,14 +205,14 @@ const AdvantageSection: React.FC = () => {
                 <div className={styles.cardNumber}>
                   <span>{item.num}</span>
                 </div>
-                
+
                 <div className={styles.cardHeader}>
                   <h3 className={styles.titleSmall}>{item.title}</h3>
                   <h4 className={styles.titleLarge}>{item.subtitle}</h4>
                 </div>
-  
+
                 <div className={styles.cardDivider}></div>
-  
+
                 <div className={styles.pointList}>
                   {item.points.map((point, idx) => (
                     <div key={idx} className={styles.pointItem}>
@@ -225,7 +225,7 @@ const AdvantageSection: React.FC = () => {
                     </div>
                   ))}
                 </div>
-  
+
                 {/* Watermark Pattern */}
                 <div className={styles.watermark}>
                   <svg viewBox="0 0 200 200" opacity="0.05">

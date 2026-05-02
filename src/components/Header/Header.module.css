@@ -119,39 +119,101 @@
   opacity: 0.88;
 }
 
+.menuButton {
+  display: none;
+}
+
 @media(max-width: 767px) {
   .nav {
-    height: 56px;
+    height: 70px;
+    background: transparent;
+    position: absolute;
+    width: 100%;
   }
+
   .navWrap {
-    padding: 0 16px;
-    gap: 12px;
+    padding: 0 20px;
+    height: 100%;
   }
+
   .navLogo {
-    gap: 12px;
+    display: none; /* Hide logo on mobile as it's in the background SVG */
   }
-  .navLinks {
-    display: none; /* Hide on very small screens or make it a scrollable row */
-  }
-  .logo1 {
-    height: 24px;
-  }
-  .logo2 {
-    height: 14px;
-  }
+
   .navRight {
-    gap: 12px;
+    display: none; /* Hide phone/cta on mobile to match reference image */
   }
-  .navPhone {
-    padding: 8px;
-    background: rgba(255, 255, 255, 0.05);
+
+  .navRightOpen {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--bluedark);
+    padding: 100px 30px;
+    z-index: 99;
+    gap: 40px;
+  }
+
+  .menuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
+    background: rgba(5, 15, 30, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 100;
   }
-  .navPhone span {
-    display: none; /* Hide text, keep icon */
+
+  .hamburger {
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
   }
-  .navCta {
-    padding: 7px 14px;
-    font-size: 11px;
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger::before {
+    top: -6px;
+  }
+
+  .hamburger::after {
+    bottom: -6px;
+  }
+
+  .active .hamburger {
+    background: transparent;
+  }
+
+  .active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .active .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
   }
 }
