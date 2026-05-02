@@ -49,12 +49,14 @@ const BenefitsSection: React.FC = () => {
                 className={`${styles.benefitBlock} ${isVisible ? styles.animate : ''}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={styles.checkIcon}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
+                <div className={styles.benefitInner}>
+                  <div className={styles.checkIcon}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </div>
+                  <p className={styles.benefitText}>{text}</p>
                 </div>
-                <p className={styles.benefitText}>{text}</p>
               </div>
             ))}
           </div>

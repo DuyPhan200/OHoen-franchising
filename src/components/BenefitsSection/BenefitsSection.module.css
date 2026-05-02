@@ -66,35 +66,51 @@
 }
 
 .benefitBlock {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(178, 143, 79, 0.15); /* Light gold border */
-  padding: 24px 20px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  text-align: left;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(4, 36, 66, 0.04);
+  position: relative;
   /* Initial state */
   opacity: 0;
   transform: translateY(40px);
+  overflow: visible;
+  transition: opacity 1s ease;
 }
 
 .benefitBlock.animate {
   animation: slideUp 0.6s ease forwards;
 }
 
-.benefitBlock:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(178, 143, 79, 0.12);
-  border-color: #d4af37;
+.benefitBlock:hover .benefitInner {
+  transform: translateY(-8px) scale(1.02);
+  background: #ffffff;
+  box-shadow: 0 15px 35px rgba(178, 143, 79, 0.15);
+  border-color: #B28F4F;
+}
+
+.benefitInner {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(178, 143, 79, 0.15);
+  padding: 24px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 25px rgba(4, 36, 66, 0.04);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  will-change: transform, box-shadow;
+}
+
+.benefitBlock:hover .checkIcon {
+  transform: scale(1.1);
+  background: #042442;
 }
 
 .checkIcon {
   width: 32px;
   height: 32px;
-  background: #d4af37; /* Gold background */
+  background: #B28F4F; /* Unified brand gold */
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -103,6 +119,7 @@
   flex-shrink: 0;
   padding: 8px;
   box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+  transition: all 0.4s ease;
 }
 
 .checkIcon svg {

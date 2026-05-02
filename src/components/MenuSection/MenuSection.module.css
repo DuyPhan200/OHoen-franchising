@@ -166,7 +166,10 @@
 }
 
 .goldText {
-  color: var(--gold, #d4af37);
+  background: linear-gradient(to right, #FFFFFF 0%, #B28F4F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -183,13 +186,13 @@
 .line {
   height: 1px;
   flex-grow: 1;
-  background: rgba(212, 175, 55, 0.6);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(178, 143, 79, 0.6));
 }
 
 .midShell {
   width: 20px;
   height: 20px;
-  fill: var(--gold, #d4af37);
+  fill: #B28F4F;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
@@ -224,29 +227,42 @@
 
 /* Card Styling */
 .menuCard {
-  background: #f8ece1;
-  border-radius: 16px;
-  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15);
-  padding: 8px 4px 12px;
-  text-align: center;
   position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1);
   /* Initial state before animation */
   opacity: 0;
   transform: translateX(50px);
+  cursor: pointer;
+  will-change: transform, opacity;
+}
+
+.menuCard:hover .menuInner {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+
+.menuInner {
+  background: #f8ece1;
+  border-radius: 16px;
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 16px 8px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  will-change: transform, background, box-shadow;
 }
 
 .menuCard.animate {
   animation: slideInRight 0.6s ease forwards;
 }
 
-.menuCard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+.menuCard:hover .menuImage {
+  transform: scale(1.1);
 }
 
 @keyframes slideInRight {
@@ -269,14 +285,20 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 .title {
   font-family: var(--font-heading, "EB Garamond", serif);
-  font-size: 18px;
+  font-size: 19px;
   color: var(--bluedark, #0a1f35);
   margin-bottom: 2px;
-  font-weight: 600;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.menuCard:hover .title {
+  color: var(--gold, #d4af37);
 }
 
 .divider {
@@ -300,7 +322,7 @@
 .shellIcon {
   width: 14px;
   height: 14px;
-  fill: var(--gold, #d4af37);
+  fill: #B28F4F;
 }
 
 .desc {
