@@ -61,7 +61,7 @@ const MenuSection: React.FC = () => {
           observer.unobserve(entry.target);
         }
       },
-      { 
+      {
         threshold: 0.4, // Chỉ chạy khi 40% lưới món ăn xuất hiện
         rootMargin: '0px 0px -50px 0px' // Đẩy điểm kích hoạt xuống thêm 50px
       }
@@ -76,7 +76,6 @@ const MenuSection: React.FC = () => {
 
   return (
     <section className={styles.section} id="menu">
-      <img src="/4.png" alt="Sea Background" className={styles.bgImage} />
       <div className={styles.container}>
         <div className={styles.leftContent}>
           <div className={styles.brandBadge}>
@@ -99,12 +98,24 @@ const MenuSection: React.FC = () => {
             Tinh hoa cháo biển miền Trung –<br />
             chế biến tươi, chuẩn vị, chuẩn trải nghiệm
           </p>
-          <button className={styles.ctaButton}>XEM THÊM</button>
+          <div className={styles.ctaWrapper}>
+            <button className={`${styles.ctaButton} ${styles.desktopOnly}`}>
+              <div className={styles.ctaIcon}>
+                <svg width="20" height="20" viewBox="0 2 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 5L10 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M15 5L14 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M4 11C4 11 4 18 12 18C20 18 20 11 20 11H4Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+                  <path d="M9 18L10 20H14L15 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <span className={styles.ctaText}>Xem thêm món ngon</span>
+            </button>
+          </div>
         </div>
         <div className={styles.menuGrid} ref={gridRef}>
           {menuItems.map((item, index) => (
-            <div 
-              key={item.id} 
+            <div
+              key={item.id}
               className={`${styles.menuCard} ${isVisible ? styles.animate : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -129,6 +140,20 @@ const MenuSection: React.FC = () => {
             </div>
           ))}
         </div>
+        <div className={styles.ctaWrapper}>
+          <button className={`${styles.ctaButton} ${styles.mobileOnly}`}>
+            <div className={styles.ctaIcon}>
+              <svg width="20" height="20" viewBox="0 2 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 5L10 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                <path d="M15 5L14 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                <path d="M4 11C4 11 4 18 12 18C20 18 20 11 20 11H4Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+                <path d="M9 18L10 20H14L15 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <span className={styles.ctaText}>Xem thêm món ngon</span>
+          </button>
+        </div>
+
       </div>
     </section>
   );

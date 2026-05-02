@@ -277,7 +277,7 @@
     margin-top: -56px;
     padding-top: 56px;
     background-image: url('/HeroSection/background_mobile.svg');
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     background-attachment: scroll;
     min-height: 100vh;
@@ -286,8 +286,12 @@
     justify-content: flex-start;
   }
 
+  .heroSection::after {
+    display: none;
+  }
+
   .heroBody {
-    padding: 25px 30px 0;
+    padding: 25px var(--px) 0;
     margin-left: 0;
     width: 100%;
   }
@@ -366,7 +370,7 @@
     display: block;
     font-size: 11px;
     text-align: left;
-    max-width: 190px;
+    max-width: 100%;
     margin: 0;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
