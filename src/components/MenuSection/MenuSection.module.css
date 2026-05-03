@@ -229,8 +229,8 @@
 }
 
 .menuCard:hover .menuInner {
-  transform: translateY(-8px) scale(1.02) !important;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px) scale(1.01) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
   background: #ffffff;
 }
 
@@ -254,7 +254,7 @@
 }
 
 .menuCard:hover .menuImage {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 @keyframes slideInRight {

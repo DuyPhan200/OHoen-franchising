@@ -1,7 +1,7 @@
 .section {
   position: relative;
   width: 100%;
-  display: flex;
+  display: block;
   background-color: #050f1e;
   overflow: hidden;
   padding: 0;
@@ -40,11 +40,9 @@
 
 
 .container {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   margin: 0;
   padding: 80px 0 20px;
   display: flex;
@@ -82,7 +80,7 @@
 
 .badgeScript {
   font-family: 'Great Vibes', cursive;
-  font-size: 24px;
+  font-size: 20px;
   color: #fff;
   line-height: 1.2;
 }
@@ -145,14 +143,31 @@
 }
 
 .dividerShell {
-  margin-top: 15px;
+  margin-top: 0px;
+  margin-bottom: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+.dividerLine {
+  width: 120px;
+  height: 1px;
+  background: #B28F4F;
+}
+
+.dividerLine:first-child {
+  background: #B28F4F;
+}
+
+.dividerLine:last-child {
+  background: #B28F4F;
 }
 
 .midShell {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   fill: #B28F4F;
 }
 
@@ -201,7 +216,7 @@
 .cardInner {
   background: #fff;
   border-radius: 24px;
-  padding: 40px 30px;
+  padding: 24px 20px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -215,6 +230,7 @@
 
 .cardContentWrapper {
   display: flex;
+  flex-direction: column; /* Restored vertical layout for desktop */
   width: 100%;
   height: 100%;
 }
@@ -224,9 +240,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 40%;
+  width: 100%; /* Full width for desktop */
   flex-shrink: 0;
-  padding-right: 20px;
+  padding-right: 0;
+  margin-bottom: 20px;
 }
 
 .card:hover .watermark {
@@ -249,7 +266,7 @@
   width: 36px;
   border-radius: 0;
   font-weight: 800;
-  font-size: 14px;
+  font-size: 11px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 88%, 0 100%);
   z-index: 10;
   display: flex;
@@ -258,16 +275,17 @@
 }
 
 .iconCircle {
-  width: 64px;
-  height: 64px;
-  background: #050f1e;
+  display: none; /* Removed for desktop */
+  width: 50px;
+  height: 50px;
+  border: 1.5px solid #B28F4F;
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
   color: #B28F4F;
-  margin-bottom: 16px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  background: transparent;
 }
 
 .cardIcon {
@@ -354,6 +372,7 @@
 }
 
 .watermark {
+  display: none; /* Removed for desktop */
   position: absolute;
   bottom: -10px;
   right: -10px;
@@ -380,14 +399,14 @@
   }
   .container {
     position: relative;
-    padding: 20px 12px 12px;
+    padding: 40px 12px 12px;
     height: auto;
     align-items: flex-start;
   }
 
   .topRow {
     flex-direction: column;
-    gap: 10px;
+    gap: 35px;
     margin-left: 0;
     margin-top: 0;
     margin-bottom: 10px;
@@ -405,17 +424,24 @@
   }
 
   .line {
-    width: 15px;
+    width: 10px;
   }
 
   .eyebrowText {
-    font-size: 8.5px;
-    letter-spacing: 0.8px;
+    font-size: 9px;
+    letter-spacing: 1px;
   }
 
   .dividerShell {
-    justify-content: flex-start;
-    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+  }
+
+  .dividerLine {
+    width: 60px;
   }
 
   .midShell {
@@ -436,20 +462,21 @@
   }
 
   .mainTitle {
-    font-size: 18px;
+    font-size: 26px;
     line-height: 1.1;
   }
 
   .subHeader {
-    font-size: 9px;
-    line-height: 1.2;
-    max-width: 160px;
+    font-size: 8.5px;
+    line-height: 1.3;
+    max-width: 240px;
   }
 
   .advantageGrid {
     grid-template-columns: 1fr;
     width: 100%;
     gap: 8px;
+    margin-top: 120px;
     margin-bottom: 5px;
   }
 
@@ -457,11 +484,11 @@
     width: 24px;
     padding: 6px 4px 10px;
     left: 10px;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .cardInner {
-    padding: 10px 6px;
+    padding: 30px 8px;
     min-height: auto;
     border-radius: 10px;
     transition: transform 0.2s ease, background 0.2s ease;
@@ -499,10 +526,12 @@
   .cardLeftSide {
     width: 35%;
     padding-right: 6px;
+    margin-bottom: 0; /* Reset desktop margin */
     border-right: 1px solid rgba(178, 143, 79, 0.1);
   }
 
   .iconCircle {
+    display: flex; /* Keep icons on mobile */
     width: 24px;
     height: 24px;
     margin-bottom: 4px;
@@ -514,11 +543,11 @@
   }
 
   .titleSmall {
-    font-size: 7.5px;
+    font-size: 10px;
   }
 
   .titleLarge {
-    font-size: 9px;
+    font-size: 13px;
   }
 
   .pointList {
@@ -545,13 +574,14 @@
   }
 
   .pointText {
-    font-size: 8px;
+    font-size: 11.5px;
     line-height: 1.2;
     font-weight: 500;
     color: #333;
   }
 
   .watermark {
+    display: block; /* Keep for mobile */
     width: 35px;
     height: 35px;
     opacity: 0.04;
@@ -560,7 +590,7 @@
   .bottomBar {
     width: 100%;
     margin-top: 5px;
-    padding: 6px;
+    padding: 12px;
     border-radius: 6px;
     background: #050f1e;
     border: 1px solid rgba(178, 143, 79, 0.2);
@@ -621,7 +651,7 @@
     color: #050f1e;
     border: none;
     border-radius: 100px;
-    padding: 4px;
+    padding: 8px;
     font-weight: 700;
     font-size: 8px;
     display: flex;

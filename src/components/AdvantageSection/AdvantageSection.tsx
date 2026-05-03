@@ -182,13 +182,16 @@ const AdvantageSection: React.FC = () => {
               <div className={styles.line}></div>
             </div>
             <h2 className={styles.mainTitle}>CHÁO NGHÊU<br />O HOÈN</h2>
-            <p className={styles.subHeader}>Tối ưu vận hành – Chuẩn hoá sản phẩm – Mở rộng bền vững</p>
             
             <div className={styles.dividerShell}>
+              <div className={styles.dividerLine}></div>
               <svg viewBox="0 0 24 24" className={styles.midShell}>
                 <path d="M10.8,21.5C9.3,21,2,14.6,2,10.5C2,5.8,6.5,2,12,2s10,3.8,10,8.5c0,4.1-7.3,10.5-8.8,11.5L12,22L10.8,21.5z M12,19c1.5-1.1,8-7.5,8-8.5c0-3.6-3.6-6.5-8-6.5S4,6.9,4,10.5c0,1,6.5,7.4,8,8.5V19z M11,7h2v9h-2V7z M7.5,8.5h1.5v6H7.5V8.5z M15,8.5h1.5v6H15V8.5z" />
               </svg>
+              <div className={styles.dividerLine}></div>
             </div>
+
+            <p className={styles.subHeader}>Tối ưu vận hành – Chuẩn hoá <br /> sản phẩm – Mở rộng bền vững</p>
           </div>
         </div>
 
