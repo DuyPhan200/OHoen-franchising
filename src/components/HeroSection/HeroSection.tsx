@@ -28,7 +28,11 @@ const HeroSection: React.FC = () => {
           <div className={styles.heroDividerLine}></div>
 
           <p className={styles.heroDescription}>
-            <strong>Góp phần giữ gìn và phát triển ẩm thực truyền thống, đặc sản làng nghề văn hoá địa phương.</strong>
+            <strong>
+              Góp phần giữ gìn và phát triển<br className={styles.mobileOnly} />
+              ẩm thực truyền thống, đặc sản<br className={styles.mobileOnly} />
+              làng nghề văn hoá địa phương.
+            </strong>
           </p>
 
           <button className={styles.heroCTA}>

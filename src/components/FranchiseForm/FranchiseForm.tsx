@@ -48,9 +48,11 @@ const FranchiseForm: React.FC = () => {
           {/* Left: Content & Trust */}
           <div className={styles.formLeft}>
             <div className={styles.brandAccent}>Bắt đầu hành trình</div>
-            <h2 className={styles.title}>Tìm hiểu nhượng quyền<br /><span>O Hoèn</span></h2>
+            <h2 className={styles.title}>TÌM HIỂU<br />NHƯỢNG QUYỀN<br /><span>O HOÈN</span></h2>
             <p className={styles.lead}>
-              Điền thông tin để nhận tư vấn miễn phí. Đội ngũ O Hoèn sẽ phản hồi trong 24 giờ với bộ tài liệu đầy đủ — không ràng buộc.
+              Điền thông tin để nhận tư vấn miễn phí.<br />
+              Đội ngũ O Hoèn sẽ phản hồi trong 24 giờ<br />
+              với bộ tài liệu đầy đủ — không ràng buộc.
             </p>
 
             <div className={styles.trustList}>

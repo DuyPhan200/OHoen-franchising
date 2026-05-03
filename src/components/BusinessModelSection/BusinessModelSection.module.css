@@ -52,13 +52,13 @@
 
 .brandScript {
   font-family: 'Great Vibes', cursive;
-  font-size: 24px;
+  font-size: 22px;
   color: #B28F4F;
 }
 
 .title {
   font-family: var(--font-heading, "EB Garamond", serif);
-  font-size: 32px;
+  font-size: 30px;
   color: #042442;
   font-weight: 800;
   margin: 0;
@@ -221,7 +221,7 @@
 /* Responsive */
 @media (max-width: 991px) {
   .title {
-    font-size: 32px;
+    font-size: 28px;
   }
   .leftSide {
     padding: 12px 20px;
@@ -237,24 +237,74 @@
 
 @media (max-width: 767px) {
   .section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
-  .modelRow {
-    flex-direction: column;
+  
+  .title {
+    font-size: 24px;
   }
+  
+  .container {
+    padding: 0 12px;
+  }
+
+  .mainGrid {
+    border-radius: 12px;
+  }
+
   .leftSide {
-    padding: 15px;
+    padding: 10px 12px;
+    gap: 8px;
+    flex: 1.1;
   }
+
+  .iconCircle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .iconCircle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .categoryName {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
   .rightSide {
-    padding: 15px;
+    padding: 10px;
+    flex: 1;
   }
+
+  .specValue {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
   .summaryBar {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
+    margin-top: 20px;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 12px;
   }
+
   .targetIcon {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .targetIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .summaryTitle {
+    font-size: 12px;
+  }
+
+  .summaryDesc {
+    font-size: 11px;
   }
 }
