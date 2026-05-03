@@ -80,11 +80,8 @@ const BusinessModelSection: React.FC = () => {
           <div className={styles.divider}>
             <div className={styles.line}></div>
             <div className={styles.shell}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 22C12 22 17 20 19 16C21 12 20.5 7.5 20.5 7.5C20.5 7.5 18 4 12 4C6 4 3.5 7.5 3.5 7.5C3.5 7.5 3 12 5 16C7 20 12 22 12 22Z" />
-                <path d="M12 22V4" />
-                <path d="M12 22C12 22 14.5 20.5 16 16.5C17.5 12.5 17 7.5 17 7.5" />
-                <path d="M12 22C12 22 9.5 20.5 8 16.5C6.5 12.5 7 7.5 7 7.5" />
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10.8,21.5C9.3,21,2,14.6,2,10.5C2,5.8,6.5,2,12,2s10,3.8,10,8.5c0,4.1-7.3,10.5-8.8,11.5L12,22L10.8,21.5z M12,19c1.5-1.1,8-7.5,8-8.5c0-3.6-3.6-6.5-8-6.5S4,6.9,4,10.5c0,1,6.5,7.4,8,8.5V19z M11,7h2v9h-2V7z M7.5,8.5h1.5v6H7.5V8.5z M15,8.5h1.5v6H15V8.5z" />
               </svg>
             </div>
             <div className={styles.line}></div>

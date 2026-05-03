@@ -29,8 +29,9 @@ const HeroSection: React.FC = () => {
 
           <p className={styles.heroDescription}>
             <strong>
-              Góp phần giữ gìn và phát triển<br className={styles.mobileOnly} />
-              ẩm thực truyền thống, đặc sản<br className={styles.mobileOnly} />
+              Góp phần giữ gìn và phát triển <br className={styles.mobileOnly} />
+              ẩm thực truyền thống, <br className={styles.desktopOnly} />
+              đặc sản <br className={styles.mobileOnly} />
               làng nghề văn hoá địa phương.
             </strong>
           </p>

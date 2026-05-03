@@ -64,7 +64,7 @@ const FranchisePage: React.FC = () => {
         style={{ width: `${scrollProgress}%` }}
       />
 
-      <Header />
+      {/* <Header /> */}
       
       <main id="main-content">
         <HeroSection />

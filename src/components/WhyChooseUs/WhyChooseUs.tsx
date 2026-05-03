@@ -30,7 +30,7 @@ const WhyChooseUs: React.FC = () => {
         <div className={styles.content}>
           <div className={styles.header}>
             <span className={styles.eyebrow}>TẠI SAO NÊN TRỞ THÀNH</span>
-            <h2 className={styles.title}>NHÀ ĐẦU TƯ <br /> CÙNG O HOÈN?</h2>
+            <h2 className={styles.title}>NHÀ ĐẦU TƯ CÙNG<br />O HOÈN?</h2>
 
             <div className={styles.ornament}>
               <div className={styles.dividerLine}></div>

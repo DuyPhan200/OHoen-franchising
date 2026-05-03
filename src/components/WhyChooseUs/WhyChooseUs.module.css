@@ -383,5 +383,39 @@
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.7);
   }
+
+  /* Remove hover/active effects on mobile */
+  .item:hover .itemInner,
+  .item:active .itemInner {
+    transform: none !important;
+    box-shadow: none !important;
+    background: rgba(4, 36, 66, 0.85) !important;
+    border-color: rgba(178, 143, 79, 0.1) !important;
+  }
+
+  .item:hover .featured,
+  .item:active .featured {
+    background: rgba(4, 36, 66, 0.95) !important;
+    border-color: #B28F4F !important;
+    box-shadow: 0 10px 30px rgba(178, 143, 79, 0.2) !important;
+  }
+
+  .item:hover .iconCircle,
+  .item:active .iconCircle {
+    background: transparent !important;
+    color: #B28F4F !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .item:hover .itemTitle,
+  .item:active .itemTitle {
+    color: #fff !important;
+  }
+
+  .item:hover .itemText,
+  .item:active .itemText {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
 }
 

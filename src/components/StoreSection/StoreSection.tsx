@@ -31,7 +31,7 @@ const StoreSection: React.FC = () => {
       </div>
 
       <div className={styles.container}>
-        <div className={styles.header}>
+        <div className={`${styles.header} ${isVisible ? styles.animate : ''}`}>
           <span className={styles.eyebrow}>Của O Hoèn</span>
           <h2 className={styles.title}>HÌNH ẢNH <br className={styles.mobileOnly} /> CỬA HÀNG</h2>
           <div className={styles.divider}></div>

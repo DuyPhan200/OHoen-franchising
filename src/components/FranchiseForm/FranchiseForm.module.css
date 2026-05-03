@@ -360,19 +360,21 @@
   }
 
   .fRow {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .fg {
-    gap: 4px;
-    margin-bottom: 10px;
+    gap: 6px;
+    margin-bottom: 16px;
+    align-items: flex-start;
   }
 
   .fg label {
     font-size: 7px;
     margin-bottom: 2px;
     letter-spacing: 1px;
+    text-align: left;
   }
 
   .fg input, .fg select {
