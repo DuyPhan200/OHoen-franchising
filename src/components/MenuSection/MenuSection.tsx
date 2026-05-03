@@ -108,7 +108,7 @@ const MenuSection: React.FC = () => {
                   <path d="M9 18L10 20H14L15 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <span className={styles.ctaText}>Xem thêm món ngon</span>
+              <span className={styles.ctaText}>Xem thêm món ăn</span>
             </button>
           </div>
         </div>
@@ -150,7 +150,7 @@ const MenuSection: React.FC = () => {
                 <path d="M9 18L10 20H14L15 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span className={styles.ctaText}>Xem thêm món ngon</span>
+            <span className={styles.ctaText}>Xem thêm món ăn</span>
           </button>
         </div>
 
