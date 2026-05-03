@@ -76,10 +76,10 @@
 }
 
 .brandBadge {
-  display: none; /* Hidden on desktop */
+  display: flex;
   flex-direction: column;
-  align-items: center; /* Center to match the logo element look */
-  margin-bottom: 16px;
+  align-items: center;
+  margin-bottom: 40px;
   width: fit-content;
 }
 
@@ -385,7 +385,7 @@
   .container {
     flex-direction: column;
     justify-content: center;
-    padding: 20px var(--px) 15px;
+    padding: 60px var(--px) 60px;
   }
 
   .menuGrid {
@@ -405,11 +405,14 @@
   }
 
   .brandBadge {
-    display: flex; /* Keep for mobile */
-    align-self: flex-start;
+    display: flex;
+    position: absolute;
+    top: 25px;
+    left: var(--px);
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     width: fit-content;
+    z-index: 10;
   }
 
   .topLogo {
