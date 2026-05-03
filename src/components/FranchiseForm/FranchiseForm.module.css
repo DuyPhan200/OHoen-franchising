@@ -296,13 +296,106 @@
 
 @media(max-width: 768px) {
   .formSec {
-    padding: 60px 0;
+    padding: 20px 0;
+    background-image: url('/FranchiseForm/background_mobile.svg');
+    background-size: cover;
+    background-position: center center;
+    background-color: #f8f1e7; /* Matching light background color */
   }
+
+  .formOuter {
+    padding: 0 10px;
+    gap: 15px;
+  }
+
+  .brandAccent {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .lead {
+    font-size: 10px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .trustList {
+    flex-direction: row;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 15px;
+  }
+
+  .trustItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 3px;
+    width: 32%;
+  }
+
+  .trustIco {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+  }
+
+  .trustIco svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .trustTxt {
+    font-size: 7px;
+    line-height: 1.1;
+  }
+
   .formBox {
-    padding: 32px 20px;
+    padding: 15px 12px;
+    border-radius: 12px;
   }
+
   .fRow {
-    grid-template-columns: 1fr;
-    gap: 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .fg {
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+
+  .fg label {
+    font-size: 7px;
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+  }
+
+  .fg input, .fg select {
+    padding: 8px 10px;
+    font-size: 11px;
+    border-radius: 6px;
+  }
+
+  .fSubmit {
+    padding: 10px;
+    font-size: 11px;
+    margin-top: 4px;
+    border-radius: 6px;
+  }
+
+  .fHotline {
+    margin-top: 12px;
+    padding-top: 8px;
+    font-size: 10px;
+  }
+
+  .fHotline svg {
+    width: 12px;
+    height: 12px;
   }
 }

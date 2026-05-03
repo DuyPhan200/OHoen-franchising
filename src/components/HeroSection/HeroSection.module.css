@@ -166,7 +166,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #B28F4F;
+  background: #FFCC00; /* Bright yellow */
   color: #050f1e;
   border: none;
   padding: 14px 28px;
@@ -181,7 +181,7 @@
 }
 
 .heroCTA:hover {
-  background: #CBB07C;
+  background: #FFE033;
   transform: translateY(-2px);
 }
 

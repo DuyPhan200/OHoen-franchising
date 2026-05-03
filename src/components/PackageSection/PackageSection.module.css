@@ -298,17 +298,13 @@
 }
 
 .previewImage {
-  width: 220px;
-  height: auto;
-  border-radius: 10px;
-  overflow: hidden;
-  flex-shrink: 0;
+  display: none;
 }
 
-.previewImage img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+.previewLabel {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
 /* Perks List */
@@ -368,13 +364,13 @@
 }
 
 .cardButtonGold {
-  background: #B28F4F;
+  background: #FFCC00; /* Bright yellow */
   color: #042442;
   border: none;
 }
 
 .cardButtonGold:hover {
-  background: #9c7d44;
+  background: #FFE033;
   transform: translateY(-2px);
 }
 
@@ -489,34 +485,188 @@
 }
 
 @media (max-width: 768px) {
+  .section {
+    background-image: url('/PackageSection/background_mobile.svg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: var(--bg-soft);
+    padding: 15px 0 15px;
+    min-height: auto;
+    width: 100%;
+  }
+
+  .container {
+    padding: 0 8px;
+    gap: 12px;
+  }
+
+  .packagesWrapper {
+    gap: 24px;
+  }
+
+  .brandAccent {
+    font-size: 24px;
+  }
+
   .columnTitle {
-    font-size: 32px;
+    font-size: 28px;
+    margin-bottom: 12px;
   }
   
+  .columnTitle::after {
+    bottom: -5px;
+    width: 30px;
+  }
+
+  .sectionHeader {
+    margin-top: 35px; 
+    margin-bottom: 85px; /* Offset margin-top reduction to keep cards in place */
+  }
+
+  .packageCard {
+    width: 95%;
+    max-width: 340px;
+    border-radius: 10px;
+  }
+
+  .packageHeader {
+    padding: 8px 12px;
+    gap: 10px;
+  }
+
+  .starBadge {
+    width: 36px;
+    height: 36px;
+  }
+
+  .packageLabel {
+    font-size: 9px;
+  }
+
+  .packageMainTitle {
+    font-size: 14px;
+  }
+
   .packageBody {
-    padding: 20px;
+    padding: 12px;
   }
-  
+
+  .topStatsRow {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .mainFeeBox {
+    padding: 10px 5px;
+  }
+
+  .feeLabel {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
   .feeValue {
-    font-size: 36px;
+    font-size: 28px;
   }
-  
-  .modelItem {
-    padding: 20px;
-    gap: 15px;
+
+  .million {
+    font-size: 12px;
   }
-  
-  .modelIconBox {
-    width: 60px;
-    height: 60px;
+
+  .feeNote {
+    font-size: 9px;
   }
-  
-  .modelIconBox svg {
-    width: 28px;
-    height: 28px;
+
+  .feeSpecs {
+    gap: 8px;
+    padding: 0;
   }
-  
-  .modelValue {
-    font-size: 20px;
+
+  .specItem {
+    gap: 6px;
+  }
+
+  .specIcon {
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+  }
+
+  .specLabel {
+    font-size: 9px;
+  }
+
+  .specValue {
+    font-size: 11px;
+  }
+
+  .specUnit {
+    font-size: 8px;
+  }
+
+  .benefitsRow {
+    gap: 12px;
+    padding-top: 12px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .perksTitle {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .perksList {
+    gap: 5px;
+  }
+
+  .perksList li {
+    font-size: 10px;
+    gap: 6px;
+  }
+
+  .perksList li svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .previewImage {
+    display: none;
+  }
+
+  .cardButtonGold, .cardButtonWhite {
+    width: calc(100% - 20px);
+    margin: 0 10px 10px;
+    padding: 10px;
+    font-size: 11px;
+    border-radius: 6px;
+  }
+
+  .btnIcon, .btnArrow {
+    width: 14px;
+    height: 14px;
+  }
+
+  .modelMainBox {
+    padding: 5px 0;
+  }
+
+  .labelCell {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .valueCell {
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  .originalPrice {
+    font-size: 15px;
+  }
+
+  .discountPrice {
+    font-size: 24px;
   }
 }

@@ -121,7 +121,7 @@ const PackageSection: React.FC = () => {
                     </ul>
                   </div>
                   <div className={styles.previewImage}>
-                    <img src="/PackageSection/store_01.svg" alt="Store Preview" />
+                    <img src="/store_01.svg" alt="Store Preview" />
                   </div>
                 </div>
               </div>
@@ -224,7 +224,7 @@ const PackageSection: React.FC = () => {
                     </ul>
                   </div>
                   <div className={styles.previewImage}>
-                    <img src="/PackageSection/store_02.svg" alt="Store Preview" />
+                    <img src="/store_02.svg" alt="Store Preview" />
                   </div>
                 </div>
               </div>

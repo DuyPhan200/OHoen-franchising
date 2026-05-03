@@ -6,7 +6,7 @@
   overflow: hidden;
   padding: 0;
   background-image: url('/MenuSection/background_desktop.svg');
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -163,7 +163,7 @@
 }
 
 .ctaButton {
-  background-color: #B28F4F;
+  background-color: #FFCC00; /* Bright yellow */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -181,7 +181,7 @@
 }
 
 .ctaButton:hover {
-  background-color: #CBB07C;
+  background-color: #FFE033;
   transform: scale(1.02);
 }
 
@@ -460,11 +460,11 @@
     max-width: 100%;
     padding: 12px 60px;
     margin-top: -25px;
-    background-color: var(--blue, #145E99);
+    background-color: #FFCC00;
   }
 
   .ctaIcon {
-    color: #fff;
+    color: #050f1e;
   }
   .ctaIcon svg {
     width: 18px;
@@ -472,7 +472,7 @@
   }
 
   .ctaText {
-    color: #fff;
+    color: #050f1e;
     font-size: 14px;
     letter-spacing: 0.05em;
   }
