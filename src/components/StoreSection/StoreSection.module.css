@@ -231,4 +231,12 @@
     font-size: 10px;
     font-weight: 700;
   }
+
+  .mobileOnly {
+    display: block;
+  }
+}
+
+.mobileOnly {
+  display: none;
 }
