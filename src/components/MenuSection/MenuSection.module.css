@@ -76,7 +76,7 @@
 }
 
 .brandBadge {
-  display: flex;
+  display: none; /* Hidden on desktop */
   flex-direction: column;
   align-items: center; /* Center to match the logo element look */
   margin-bottom: 16px;
@@ -405,6 +405,7 @@
   }
 
   .brandBadge {
+    display: flex; /* Keep for mobile */
     align-self: flex-start;
     align-items: center;
     margin-bottom: 10px;

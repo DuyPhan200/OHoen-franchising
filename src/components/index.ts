@@ -17,6 +17,7 @@ export { default as WhyChooseUs } from './WhyChooseUs';
 export { default as BenefitsSection } from './BenefitsSection';
 export { default as StoreSection } from './StoreSection';
 export { default as PackageSection } from './PackageSection';
+export { default as BusinessModelSection } from './BusinessModelSection';
 export { default as FranchiseVision } from './FranchiseVision';
 export { default as TestimonialsSection } from './TestimonialsSection';
 export { default as FAQSection } from './FAQSection';

@@ -1,7 +1,11 @@
 .formSec {
-  background-color: #fdf5e6;
-  padding: 100px 0;
   position: relative;
+  width: 100%;
+  padding: 100px 0;
+  background-image: url('/FranchiseForm/background_desktop.svg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 

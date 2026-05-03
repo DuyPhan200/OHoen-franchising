@@ -8,6 +8,7 @@ import {
   BenefitsSection,
   StoreSection,
   PackageSection,
+  BusinessModelSection,
   FranchiseForm, 
   Footer, 
   StickyBar 
@@ -73,6 +74,7 @@ const FranchisePage: React.FC = () => {
         <BenefitsSection />
         <StoreSection />
         <PackageSection />
+        <BusinessModelSection />
         <FranchiseForm />
       </main>
 

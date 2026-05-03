@@ -7,8 +7,8 @@
   padding: 0;
   max-height: 880px;
   background-image: url('/AdventageSection/background_desktop.svg');
-  background-size: 100% 100%;
-  background-position: top center;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
@@ -64,7 +64,7 @@
 }
 
 .brandBadge {
-  display: flex;
+  display: none; /* Hidden on desktop */
   flex-direction: column;
   align-items: center;
   width: fit-content;
@@ -411,6 +411,10 @@
     margin-top: 0;
     margin-bottom: 10px;
     align-items: flex-start;
+  }
+
+  .brandBadge {
+    display: flex; /* Keep for mobile */
   }
 
   .header {

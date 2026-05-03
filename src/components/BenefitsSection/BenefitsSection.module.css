@@ -2,29 +2,19 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 0;
-}
-
-.bgWrapper {
-  position: relative;
-  width: 100%;
-  z-index: 1;
-}
-
-.bgImage {
-  width: 100%;
-  height: auto;
-  display: block;
-  min-height: 500px;
-  object-fit: cover;
+  padding: 100px 0 50px;
+  background-image: url('/BenefitsSection/background_desktop.svg');
+  background-size: cover;
+  background-position: center center;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
 }
 
 .container {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   z-index: 3;
   display: flex;
   justify-content: center;
@@ -40,18 +30,31 @@
 
 .title {
   font-family: var(--font-heading, "EB Garamond", serif);
-  font-size: 52px;
-  color: #042442; /* Precise deep blue/navy from image */
+  font-size: 36px;
+  color: #042442;
   margin-bottom: 50px;
-  font-weight: 800; /* Extra bold as in image */
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 2px; /* Increased letter spacing to match image */
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: #B28F4F;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 40px;
+  width: 100%;
 }
 
 @keyframes slideUp {
@@ -86,20 +89,25 @@
 }
 
 .benefitInner {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(178, 143, 79, 0.15);
-  padding: 24px 20px;
-  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(178, 143, 79, 0.12);
+  padding: 18px 24px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 15px;
   text-align: left;
-  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: 0 8px 25px rgba(4, 36, 66, 0.04);
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   width: 100%;
   height: 100%;
   cursor: pointer;
-  will-change: transform, box-shadow;
+}
+
+.benefitInner:hover {
+  border-color: #B28F4F;
+  box-shadow: 0 12px 30px rgba(178, 143, 79, 0.1);
+  transform: translateY(-5px);
 }
 
 .benefitBlock:hover .checkIcon {
@@ -108,8 +116,8 @@
 }
 
 .checkIcon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   background: #B28F4F; /* Unified brand gold */
   color: #fff;
   border-radius: 50%;
@@ -128,12 +136,11 @@
 }
 
 .benefitText {
-  color: #042442; /* Deep Navy */
+  color: #042442;
   font-size: 15px;
-  font-weight: 700; /* Bolder for strength */
+  font-weight: 700;
   line-height: 1.4;
   margin: 0;
-  letter-spacing: 0.2px;
 }
 
 @media (max-width: 1024px) {
@@ -159,4 +166,103 @@
   .grid {
     grid-template-columns: 1fr;
   }
+  .bottomBar {
+    flex-direction: column;
+    padding: 24px 20px;
+    gap: 20px;
+    text-align: center;
+  }
+  .barLeft {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .barText {
+    text-align: center;
+  }
+  .barButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Bottom CTA Bar Styles */
+.bottomBar {
+  margin-top: 40px;
+  background: #042442;
+  border-radius: 12px;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.barLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.barIcon {
+  width: 40px;
+  height: 40px;
+  color: #B28F4F;
+  flex-shrink: 0;
+}
+
+.barIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.barText {
+  text-align: left;
+}
+
+.barTitle {
+  color: #B28F4F;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.barSubtitle {
+  color: #fff;
+  font-size: 11px;
+  margin: 2px 0 0;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.barButton {
+  background: #E5C59E; /* Light gold/beige from image */
+  color: #042442;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.barButton:hover {
+  background: #B28F4F;
+  transform: scale(1.02);
+}
+
+.phoneIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.arrowIcon {
+  width: 20px;
+  height: 20px;
 }
