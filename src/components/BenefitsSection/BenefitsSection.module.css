@@ -246,6 +246,23 @@
     color: #042442;
     border-radius: 8px;
   }
+
+  /* Remove hover/active effects on mobile */
+  .benefitBlock:hover .benefitInner,
+  .benefitBlock:active .benefitInner,
+  .benefitInner:hover,
+  .benefitInner:active {
+    transform: none !important;
+    background: #fff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    border: none !important;
+  }
+
+  .benefitBlock:hover .checkIcon,
+  .benefitBlock:active .checkIcon {
+    transform: none !important;
+    background: #B28F4F !important;
+  }
 }
 
 /* Bottom CTA Bar Styles */
@@ -259,6 +276,16 @@
   align-items: center;
   width: 100%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  /* Animation */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-delay: 0.4s;
+}
+
+.bottomBar.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .barLeft {
@@ -270,7 +297,6 @@
 .barIcon {
   width: 40px;
   height: 40px;
-  color: #B28F4F;
   flex-shrink: 0;
 }
 

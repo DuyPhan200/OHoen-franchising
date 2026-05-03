@@ -169,7 +169,6 @@
 .midShell {
   width: 18px;
   height: 18px;
-  fill: #B28F4F;
 }
 
 /* Grid & Cards */
@@ -400,7 +399,7 @@
   }
   .container {
     position: relative;
-    padding: 40px 12px 12px;
+    padding: 60px 12px 60px;
     height: auto;
     align-items: flex-start;
   }
@@ -456,15 +455,15 @@
   }
 
   .topLogo {
-    width: 20px;
+    width: 28px;
   }
 
   .badgeScript {
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .badgeSub {
-    font-size: 4.5px;
+    font-size: 6px;
   }
 
   .mainTitle {
@@ -570,13 +569,14 @@
   }
 
   .pointIconCircle {
-    width: 10px;
-    height: 10px;
-    margin-top: 1px;
+    width: 14px;
+    height: 14px;
+    margin-top: 2px;
     background: transparent;
     color: #B28F4F;
     box-shadow: none;
     padding: 0;
+    flex-shrink: 0;
   }
 
   .pointText {
@@ -596,7 +596,7 @@
   .bottomBar {
     width: 100%;
     margin-top: 5px;
-    padding: 12px;
+    padding: 20px 16px;
     border-radius: 6px;
     background: #050f1e;
     border: 1px solid rgba(178, 143, 79, 0.2);
@@ -617,9 +617,8 @@
   }
 
   .barShell {
-    width: 20px;
-    height: 20px;
-    fill: #B28F4F;
+    width: 28px;
+    height: 28px;
     flex-shrink: 0;
   }
 
@@ -629,7 +628,7 @@
   }
 
   .barTopText {
-    font-size: 7px;
+    font-size: 10px;
     color: #fff;
     margin: 0;
     letter-spacing: 1px;
@@ -637,7 +636,7 @@
   }
 
   .barMainTitle {
-    font-size: 9px;
+    font-size: 11px;
     color: #B28F4F;
     margin: 3px 0;
     font-weight: 700;
@@ -645,7 +644,7 @@
 
   .barScript {
     font-family: 'Great Vibes', cursive;
-    font-size: 10px;
+    font-size: 14px;
     color: #fff;
     margin: 0;
     font-weight: 400;
@@ -657,9 +656,9 @@
     color: #050f1e;
     border: none;
     border-radius: 100px;
-    padding: 8px;
+    padding: 12px;
     font-weight: 700;
-    font-size: 8px;
+    font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -185,9 +185,7 @@ const AdvantageSection: React.FC = () => {
             
             <div className={styles.dividerShell}>
               <div className={styles.dividerLine}></div>
-              <svg viewBox="0 0 24 24" className={styles.midShell}>
-                <path d="M10.8,21.5C9.3,21,2,14.6,2,10.5C2,5.8,6.5,2,12,2s10,3.8,10,8.5c0,4.1-7.3,10.5-8.8,11.5L12,22L10.8,21.5z M12,19c1.5-1.1,8-7.5,8-8.5c0-3.6-3.6-6.5-8-6.5S4,6.9,4,10.5c0,1,6.5,7.4,8,8.5V19z M11,7h2v9h-2V7z M7.5,8.5h1.5v6H7.5V8.5z M15,8.5h1.5v6H15V8.5z" />
-              </svg>
+            <img src="/Logo1.svg" alt="Logo" className={styles.midShell} />
               <div className={styles.dividerLine}></div>
             </div>
 
@@ -247,12 +245,10 @@ const AdvantageSection: React.FC = () => {
         </div>
 
         {/* Bottom CTA Bar */}
-        <div className={styles.bottomBar}>
+        <div className={`${styles.bottomBar} ${isVisible ? styles.animate : ''}`}>
           <div className={styles.bottomBarContent}>
             <div className={styles.barLeft}>
-              <svg viewBox="0 0 24 24" className={styles.barShell}>
-                <path d="M10.8,21.5C9.3,21,2,14.6,2,10.5C2,5.8,6.5,2,12,2s10,3.8,10,8.5c0,4.1-7.3,10.5-8.8,11.5L12,22L10.8,21.5z M12,19c1.5-1.1,8-7.5,8-8.5c0-3.6-3.6-6.5-8-6.5S4,6.9,4,10.5c0,1,6.5,7.4,8,8.5V19z M11,7h2v9h-2V7z M7.5,8.5h1.5v6H7.5V8.5z M15,8.5h1.5v6H15V8.5z" />
-              </svg>
+              <img src="/Logo1.svg" alt="Logo" className={styles.barShell} />
               <div className={styles.barText}>
                 <p className={styles.barTopText}>ĐỒNG HÀNH CÙNG O HOÈN</p>
                 <h3 className={styles.barMainTitle}>KIẾN TẠO THƯƠNG HIỆU CHÁO NGHÊU</h3>

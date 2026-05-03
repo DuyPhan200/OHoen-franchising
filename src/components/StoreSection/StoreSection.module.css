@@ -4,6 +4,7 @@
   background-color: #fdf5e6;
   overflow: hidden;
   padding: 0;
+  min-height: 500px;
 }
 
 .bgWrapper {
@@ -14,8 +15,9 @@
 
 .bgImage {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .container {
@@ -25,7 +27,7 @@
   width: 100%;
   height: 100%;
   z-index: 3;
-  padding: 60px 120px;
+  padding: 100px 120px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -34,6 +36,14 @@
 
 .header {
   text-align: left;
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.header.animate {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .eyebrow, .divider, .description, .mobileContent {
@@ -78,6 +88,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .eyebrow {
@@ -123,49 +136,53 @@
 
   .storeCard {
     background: #fff;
-    border-radius: 0;
+    border-radius: 12px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    overflow: hidden; 
+    padding: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    gap: 15px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(178, 143, 79, 0.1);
   }
 
   .storeImageWrapper {
-    width: 55%;
+    width: 140px;
     aspect-ratio: 16 / 9;
-    border-radius: 0;
+    height: auto;
+    border-radius: 8px;
     overflow: hidden;
     flex-shrink: 0;
-    margin-left: -23px; /* Shifted left further by 0.2cm */
+    margin-left: 0;
   }
 
   .storeImage {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: contain;
   }
 
   .storeInfo {
-    padding: 0 0 0 10px;
+    padding: 0;
     flex: 1;
-    position: relative;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .storeHeader {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
     gap: 8px;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
 
   .locIcon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     background: #042442;
     color: #fff;
     border-radius: 4px;
@@ -182,16 +199,14 @@
     color: #042442;
     margin: 0;
     text-transform: uppercase;
-    flex: 1;
-    text-align: left;
+    line-height: 1.2;
   }
 
   .storeAddress {
-    font-size: 9px;
+    font-size: 10px;
     color: #666;
-    line-height: 1.3;
+    line-height: 1.4;
     margin: 0;
-    text-align: left;
   }
 
   .arrowIcon {

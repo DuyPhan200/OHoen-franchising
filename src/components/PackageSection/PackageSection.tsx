@@ -38,10 +38,7 @@ const PackageSection: React.FC = () => {
             <div className={styles.packageCard}>
               <div className={styles.packageHeader}>
                 <div className={styles.starBadge}>
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <circle cx="12" cy="12" r="10" fill="#B28F4F" />
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#fff" />
-                  </svg>
+                  <img src="/Logo1.svg" alt="Logo" className={styles.packageLogo} />
                 </div>
                 <div className={styles.headerText}>
                   <span className={styles.packageLabel}>GÓI 01</span>
@@ -141,10 +138,7 @@ const PackageSection: React.FC = () => {
             <div className={`${styles.packageCard} ${styles.featuredCard}`}>
               <div className={styles.packageHeader}>
                 <div className={styles.starBadge}>
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <circle cx="12" cy="12" r="10" fill="#B28F4F" />
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#fff" />
-                  </svg>
+                  <img src="/Logo1.svg" alt="Logo" className={styles.packageLogo} />
                 </div>
                 <div className={styles.headerText}>
                   <span className={styles.packageLabel}>GÓI 02</span>
