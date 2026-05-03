@@ -323,7 +323,7 @@
 
   .heroTitleMain {
     display: block;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 1.1;
     text-align: left;
     background: linear-gradient(to right, #FFFFFF 0%, #B28F4F 100%);
@@ -342,14 +342,14 @@
 
   .heroBrandText {
     display: block;
-    font-size: 28px;
+    font-size: 22px;
     line-height: 1.1;
     padding-bottom: 0;
     color: #FFFFFF;
   }
 
   .heroBrandScript {
-    font-size: 60px;
+    font-size: 48px;
     padding: 5px 0;
     margin-left: -5px;
     background: linear-gradient(to right, #FFFFFF 0%, #B28F4F 100%);
