@@ -33,7 +33,7 @@ const StoreSection: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <span className={styles.eyebrow}>Của O Hoèn</span>
-          <h2 className={styles.title}>HÌNH ẢNH <br /> CỬA HÀNG</h2>
+          <h2 className={styles.title}>HÌNH ẢNH <br className={styles.mobileOnly} /> CỬA HÀNG</h2>
           <div className={styles.divider}></div>
           <p className={styles.description}>
             Hệ thống cửa hàng của O Hoèn trên khắp Đà Nẵng, <br />
